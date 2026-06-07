@@ -14,6 +14,7 @@ Participantes de este proyecto:
 - Valeria Sánchez Ferrara
 
 Descripción sobre el software:
+
 El sistema web “WearDrop” propuesto se centra en la automatización de los procesos transaccionales
 que sostienen la operación diaria de una tienda de ropa en Gamarra. En primer lugar, permite registrar y
 gestionar las ventas, desde la selección de productos hasta la emisión de comprobantes de pago electrónicos
