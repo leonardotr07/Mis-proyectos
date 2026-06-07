@@ -1,0 +1,105 @@
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+D:\Work and Life\Universidad\Ciclo 6\Programación 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+D:\Work and Life\fe\locura\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\DRIMTIM-PROGRAMACION-3-V2\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Repositorios\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\DRIMTIM-PROGRAMACION-3-V2\Proyecto WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\ProyectoWearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+D:\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\matia\Downloads\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\Leonardo\Downloads\WearDrop\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\Leonardo\OneDrive\Desktop\6to Ciclo\Programacion 3\Proyecto\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\HP\Downloads\Leo\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\WearDrop (1)\WearDrop\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+C:\Users\HP\Downloads\Matias2\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll.config
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.dll
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\bin\WearDropWA.pdb
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.AssemblyReference.cache
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.csproj.CoreCompileInputs.cache
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.dll
+D:\WaerDropFinal\WearDrop\WearDropFront\WearDrop\WearDropWA\obj\Debug\WearDropWA.pdb

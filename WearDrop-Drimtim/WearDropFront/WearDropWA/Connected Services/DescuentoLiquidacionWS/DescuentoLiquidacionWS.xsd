@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://descuentos.services.weardrop.pucp.edu.pe/" targetNamespace="http://descuentos.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarDescuentoLiquidacion" type="tns:eliminarDescuentoLiquidacion" />
+  <xs:element name="eliminarDescuentoLiquidacionResponse" type="tns:eliminarDescuentoLiquidacionResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="insertarDescuentoLiquidacion" type="tns:insertarDescuentoLiquidacion" />
+  <xs:element name="insertarDescuentoLiquidacionResponse" type="tns:insertarDescuentoLiquidacionResponse" />
+  <xs:element name="insertarPrendaLiquidacion" type="tns:insertarPrendaLiquidacion" />
+  <xs:element name="insertarPrendaLiquidacionResponse" type="tns:insertarPrendaLiquidacionResponse" />
+  <xs:element name="modificarDecuentoLiquidacion" type="tns:modificarDecuentoLiquidacion" />
+  <xs:element name="modificarDecuentoLiquidacionResponse" type="tns:modificarDecuentoLiquidacionResponse" />
+  <xs:element name="mostrarLiquidacionXPrenda" type="tns:mostrarLiquidacionXPrenda" />
+  <xs:element name="mostrarLiquidacionXPrendaResponse" type="tns:mostrarLiquidacionXPrendaResponse" />
+  <xs:element name="mostrar_descuentosliquidacion" type="tns:mostrar_descuentosliquidacion" />
+  <xs:element name="mostrar_descuentosliquidacionResponse" type="tns:mostrar_descuentosliquidacionResponse" />
+  <xs:element name="mostrar_descuentosliquidacionactivos" type="tns:mostrar_descuentosliquidacionactivos" />
+  <xs:element name="mostrar_descuentosliquidacionactivosResponse" type="tns:mostrar_descuentosliquidacionactivosResponse" />
+  <xs:element name="obtenerXIdLiquidacion" type="tns:obtenerXIdLiquidacion" />
+  <xs:element name="obtenerXIdLiquidacionResponse" type="tns:obtenerXIdLiquidacionResponse" />
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerXIdLiquidacion">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerXIdLiquidacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:descuentoLiquidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descuentoLiquidacion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:descuento">
+        <xs:sequence>
+          <xs:element name="condicionStockMin" type="xs:int" />
+          <xs:element name="porcentajeLiquidacion" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="descuento" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="esAutomatico" type="xs:boolean" />
+      <xs:element name="idDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vigencia">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idVigencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosliquidacion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosliquidacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoLiquidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoLiquidacion">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoLiquidacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDecuentoLiquidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datDesc" type="tns:descuentoLiquidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDecuentoLiquidacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrarLiquidacionXPrenda">
+    <xs:sequence>
+      <xs:element name="idPrenda" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrarLiquidacionXPrendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoLiquidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosliquidacionactivos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosliquidacionactivosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoLiquidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaLiquidacion">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="idPrendas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaLiquidacionResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarDescuentoLiquidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datDesc" type="tns:descuentoLiquidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDescuentoLiquidacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

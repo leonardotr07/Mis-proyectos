@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://promociones.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PromocionComboWS" targetNamespace="http://promociones.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/PromocionComboWS?xsd=1" namespace="http://promociones.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="mostrar_promocionescomboactivo">
+    <part name="parameters" element="tns:mostrar_promocionescomboactivo" />
+  </message>
+  <message name="mostrar_promocionescomboactivoResponse">
+    <part name="parameters" element="tns:mostrar_promocionescomboactivoResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="eliminarPromocionCombo">
+    <part name="parameters" element="tns:eliminarPromocionCombo" />
+  </message>
+  <message name="eliminarPromocionComboResponse">
+    <part name="parameters" element="tns:eliminarPromocionComboResponse" />
+  </message>
+  <message name="mostrarComboXPrenda">
+    <part name="parameters" element="tns:mostrarComboXPrenda" />
+  </message>
+  <message name="mostrarComboXPrendaResponse">
+    <part name="parameters" element="tns:mostrarComboXPrendaResponse" />
+  </message>
+  <message name="obtenerPorIdCombo">
+    <part name="parameters" element="tns:obtenerPorIdCombo" />
+  </message>
+  <message name="obtenerPorIdComboResponse">
+    <part name="parameters" element="tns:obtenerPorIdComboResponse" />
+  </message>
+  <message name="modificarPromocionCombo">
+    <part name="parameters" element="tns:modificarPromocionCombo" />
+  </message>
+  <message name="modificarPromocionComboResponse">
+    <part name="parameters" element="tns:modificarPromocionComboResponse" />
+  </message>
+  <message name="insertarPrendaCombo">
+    <part name="parameters" element="tns:insertarPrendaCombo" />
+  </message>
+  <message name="insertarPrendaComboResponse">
+    <part name="parameters" element="tns:insertarPrendaComboResponse" />
+  </message>
+  <message name="mostrar_promocionescombo">
+    <part name="parameters" element="tns:mostrar_promocionescombo" />
+  </message>
+  <message name="mostrar_promocionescomboResponse">
+    <part name="parameters" element="tns:mostrar_promocionescomboResponse" />
+  </message>
+  <message name="insertarPromocionCombo">
+    <part name="parameters" element="tns:insertarPromocionCombo" />
+  </message>
+  <message name="insertarPromocionComboResponse">
+    <part name="parameters" element="tns:insertarPromocionComboResponse" />
+  </message>
+  <portType name="PromocionComboWS">
+    <operation name="mostrar_promocionescomboactivo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/mostrar_promocionescomboactivoRequest" message="tns:mostrar_promocionescomboactivo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/mostrar_promocionescomboactivoResponse" message="tns:mostrar_promocionescomboactivoResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="eliminarPromocionCombo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/eliminarPromocionComboRequest" message="tns:eliminarPromocionCombo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/eliminarPromocionComboResponse" message="tns:eliminarPromocionComboResponse" />
+    </operation>
+    <operation name="mostrarComboXPrenda">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/mostrarComboXPrendaRequest" message="tns:mostrarComboXPrenda" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/mostrarComboXPrendaResponse" message="tns:mostrarComboXPrendaResponse" />
+    </operation>
+    <operation name="obtenerPorIdCombo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/obtenerPorIdComboRequest" message="tns:obtenerPorIdCombo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/obtenerPorIdComboResponse" message="tns:obtenerPorIdComboResponse" />
+    </operation>
+    <operation name="modificarPromocionCombo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/modificarPromocionComboRequest" message="tns:modificarPromocionCombo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/modificarPromocionComboResponse" message="tns:modificarPromocionComboResponse" />
+    </operation>
+    <operation name="insertarPrendaCombo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/insertarPrendaComboRequest" message="tns:insertarPrendaCombo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/insertarPrendaComboResponse" message="tns:insertarPrendaComboResponse" />
+    </operation>
+    <operation name="mostrar_promocionescombo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/mostrar_promocionescomboRequest" message="tns:mostrar_promocionescombo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/mostrar_promocionescomboResponse" message="tns:mostrar_promocionescomboResponse" />
+    </operation>
+    <operation name="insertarPromocionCombo">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/insertarPromocionComboRequest" message="tns:insertarPromocionCombo" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionComboWS/insertarPromocionComboResponse" message="tns:insertarPromocionComboResponse" />
+    </operation>
+  </portType>
+  <binding name="PromocionComboWSPortBinding" type="tns:PromocionComboWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="mostrar_promocionescomboactivo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPromocionCombo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrarComboXPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPorIdCombo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPromocionCombo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPrendaCombo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrar_promocionescombo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPromocionCombo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PromocionComboWS">
+    <port name="PromocionComboWSPort" binding="tns:PromocionComboWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/PromocionComboWS" />
+    </port>
+  </service>
+</definitions>

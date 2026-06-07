@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://descuentos.services.weardrop.pucp.edu.pe/" targetNamespace="http://descuentos.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarDescuentoMonto" type="tns:eliminarDescuentoMonto" />
+  <xs:element name="eliminarDescuentoMontoResponse" type="tns:eliminarDescuentoMontoResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="insertarDescuentoMonto" type="tns:insertarDescuentoMonto" />
+  <xs:element name="insertarDescuentoMontoResponse" type="tns:insertarDescuentoMontoResponse" />
+  <xs:element name="insertarPrendaMonto" type="tns:insertarPrendaMonto" />
+  <xs:element name="insertarPrendaMontoResponse" type="tns:insertarPrendaMontoResponse" />
+  <xs:element name="modificarDescuentoMonto" type="tns:modificarDescuentoMonto" />
+  <xs:element name="modificarDescuentoMontoResponse" type="tns:modificarDescuentoMontoResponse" />
+  <xs:element name="mostrarMontoXPrenda" type="tns:mostrarMontoXPrenda" />
+  <xs:element name="mostrarMontoXPrendaResponse" type="tns:mostrarMontoXPrendaResponse" />
+  <xs:element name="mostrar_descuentosmontos" type="tns:mostrar_descuentosmontos" />
+  <xs:element name="mostrar_descuentosmontosResponse" type="tns:mostrar_descuentosmontosResponse" />
+  <xs:element name="mostrar_descuentosmontosactivos" type="tns:mostrar_descuentosmontosactivos" />
+  <xs:element name="mostrar_descuentosmontosactivosResponse" type="tns:mostrar_descuentosmontosactivosResponse" />
+  <xs:element name="obtenerXIdMonto" type="tns:obtenerXIdMonto" />
+  <xs:element name="obtenerXIdMontoResponse" type="tns:obtenerXIdMontoResponse" />
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosmontosactivos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosmontosactivosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoMonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descuentoMonto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:descuento">
+        <xs:sequence>
+          <xs:element name="montoEditable" type="xs:double" />
+          <xs:element name="montoMaximo" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="descuento" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="esAutomatico" type="xs:boolean" />
+      <xs:element name="idDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vigencia">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idVigencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDescuentoMonto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datDesc" type="tns:descuentoMonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDescuentoMontoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrarMontoXPrenda">
+    <xs:sequence>
+      <xs:element name="idPrenda" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrarMontoXPrendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoMonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoMonto">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoMontoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaMonto">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="idPrendas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaMontoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerXIdMonto">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerXIdMontoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:descuentoMonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDescuentoMonto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datDesc" type="tns:descuentoMonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDescuentoMontoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosmontos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosmontosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoMonto" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

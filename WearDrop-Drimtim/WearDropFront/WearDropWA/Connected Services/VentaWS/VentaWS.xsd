@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ventas.services.weardrop.pucp.edu.pe/" targetNamespace="http://ventas.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarVenta" type="tns:eliminarVenta" />
+  <xs:element name="eliminarVentaResponse" type="tns:eliminarVentaResponse" />
+  <xs:element name="insertarVenta" type="tns:insertarVenta" />
+  <xs:element name="insertarVentaResponse" type="tns:insertarVentaResponse" />
+  <xs:element name="listarVentas" type="tns:listarVentas" />
+  <xs:element name="listarVentasResponse" type="tns:listarVentasResponse" />
+  <xs:element name="modificarVenta" type="tns:modificarVenta" />
+  <xs:element name="modificarVentaResponse" type="tns:modificarVentaResponse" />
+  <xs:element name="obtenerVentaPorId" type="tns:obtenerVentaPorId" />
+  <xs:element name="obtenerVentaPorIdResponse" type="tns:obtenerVentaPorIdResponse" />
+  <xs:complexType name="modificarVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="venta" type="tns:venta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="venta">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="empleado" type="tns:empleado" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element name="idComprobante" type="xs:int" />
+      <xs:element name="idVenta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:itemVenta" />
+      <xs:element name="total" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="historialCompras" nillable="true" type="tns:venta" />
+          <xs:element name="idCliente" type="xs:int" />
+          <xs:element minOccurs="0" name="tipo" type="tns:tipoDeCliente" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="dni" type="xs:int" />
+      <xs:element name="genero" type="xs:unsignedShort" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="primerApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="segundoApellido" type="xs:string" />
+      <xs:element name="telefono" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDeCliente">
+    <xs:sequence>
+      <xs:element name="abreviatura" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="tipoCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="cargoAsignado" type="tns:cargo" />
+          <xs:element name="idEmpleado" type="xs:int" />
+          <xs:element name="sueldo" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cargo">
+    <xs:sequence>
+      <xs:element name="abreviatura" type="xs:unsignedShort" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idCargo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemVenta">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="cantidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="descuentos" nillable="true" type="tns:descuento" />
+      <xs:element name="idPrenda" type="xs:int" />
+      <xs:element name="numLinea" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="promociones" nillable="true" type="tns:promocion" />
+      <xs:element name="subtotal" type="xs:double" />
+      <xs:element minOccurs="0" name="talla" type="tns:talla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descuento" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="esAutomatico" type="xs:boolean" />
+      <xs:element name="idDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vigencia">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idVigencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="promocion" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="esAutomatico" type="xs:boolean" />
+      <xs:element name="idPromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="venta" type="tns:venta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerVentaPorId">
+    <xs:sequence>
+      <xs:element name="idVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerVentaPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:venta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarVentas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarVentasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:venta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarVenta">
+    <xs:sequence>
+      <xs:element name="idVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="talla">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XS" />
+      <xs:enumeration value="S" />
+      <xs:enumeration value="M" />
+      <xs:enumeration value="L" />
+      <xs:enumeration value="XL" />
+      <xs:enumeration value="XXL" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://devoluciones.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="DevolucionWS" targetNamespace="http://devoluciones.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/DevolucionWS?xsd=1" namespace="http://devoluciones.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listarDevolucionesPorProveedor">
+    <part name="parameters" element="tns:listarDevolucionesPorProveedor" />
+  </message>
+  <message name="listarDevolucionesPorProveedorResponse">
+    <part name="parameters" element="tns:listarDevolucionesPorProveedorResponse" />
+  </message>
+  <message name="modificarDevolucion">
+    <part name="parameters" element="tns:modificarDevolucion" />
+  </message>
+  <message name="modificarDevolucionResponse">
+    <part name="parameters" element="tns:modificarDevolucionResponse" />
+  </message>
+  <message name="obtenerDevolucionPorId">
+    <part name="parameters" element="tns:obtenerDevolucionPorId" />
+  </message>
+  <message name="obtenerDevolucionPorIdResponse">
+    <part name="parameters" element="tns:obtenerDevolucionPorIdResponse" />
+  </message>
+  <message name="listarDevoluciones">
+    <part name="parameters" element="tns:listarDevoluciones" />
+  </message>
+  <message name="listarDevolucionesResponse">
+    <part name="parameters" element="tns:listarDevolucionesResponse" />
+  </message>
+  <message name="insertarDevolucion">
+    <part name="parameters" element="tns:insertarDevolucion" />
+  </message>
+  <message name="insertarDevolucionResponse">
+    <part name="parameters" element="tns:insertarDevolucionResponse" />
+  </message>
+  <message name="eliminarDevolucion">
+    <part name="parameters" element="tns:eliminarDevolucion" />
+  </message>
+  <message name="eliminarDevolucionResponse">
+    <part name="parameters" element="tns:eliminarDevolucionResponse" />
+  </message>
+  <portType name="DevolucionWS">
+    <operation name="listarDevolucionesPorProveedor">
+      <input wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/listarDevolucionesPorProveedorRequest" message="tns:listarDevolucionesPorProveedor" />
+      <output wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/listarDevolucionesPorProveedorResponse" message="tns:listarDevolucionesPorProveedorResponse" />
+    </operation>
+    <operation name="modificarDevolucion">
+      <input wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/modificarDevolucionRequest" message="tns:modificarDevolucion" />
+      <output wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/modificarDevolucionResponse" message="tns:modificarDevolucionResponse" />
+    </operation>
+    <operation name="obtenerDevolucionPorId">
+      <input wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/obtenerDevolucionPorIdRequest" message="tns:obtenerDevolucionPorId" />
+      <output wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/obtenerDevolucionPorIdResponse" message="tns:obtenerDevolucionPorIdResponse" />
+    </operation>
+    <operation name="listarDevoluciones">
+      <input wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/listarDevolucionesRequest" message="tns:listarDevoluciones" />
+      <output wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/listarDevolucionesResponse" message="tns:listarDevolucionesResponse" />
+    </operation>
+    <operation name="insertarDevolucion">
+      <input wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/insertarDevolucionRequest" message="tns:insertarDevolucion" />
+      <output wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/insertarDevolucionResponse" message="tns:insertarDevolucionResponse" />
+    </operation>
+    <operation name="eliminarDevolucion">
+      <input wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/eliminarDevolucionRequest" message="tns:eliminarDevolucion" />
+      <output wsam:Action="http://devoluciones.services.weardrop.pucp.edu.pe/DevolucionWS/eliminarDevolucionResponse" message="tns:eliminarDevolucionResponse" />
+    </operation>
+  </portType>
+  <binding name="DevolucionWSPortBinding" type="tns:DevolucionWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarDevolucionesPorProveedor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarDevolucion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerDevolucionPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDevoluciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDevolucion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarDevolucion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DevolucionWS">
+    <port name="DevolucionWSPort" binding="tns:DevolucionWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/DevolucionWS" />
+    </port>
+  </service>
+</definitions>

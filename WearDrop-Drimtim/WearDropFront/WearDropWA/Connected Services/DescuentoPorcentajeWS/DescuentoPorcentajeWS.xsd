@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://descuentos.services.weardrop.pucp.edu.pe/" targetNamespace="http://descuentos.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarDescuentoPorcentaje" type="tns:eliminarDescuentoPorcentaje" />
+  <xs:element name="eliminarDescuentoPorcentajeResponse" type="tns:eliminarDescuentoPorcentajeResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="insertarDescuento" type="tns:insertarDescuento" />
+  <xs:element name="insertarDescuentoResponse" type="tns:insertarDescuentoResponse" />
+  <xs:element name="insertarPrendaPorcentaje" type="tns:insertarPrendaPorcentaje" />
+  <xs:element name="insertarPrendaPorcentajeResponse" type="tns:insertarPrendaPorcentajeResponse" />
+  <xs:element name="modificarDescuentoPorcentaje" type="tns:modificarDescuentoPorcentaje" />
+  <xs:element name="modificarDescuentoPorcentajeResponse" type="tns:modificarDescuentoPorcentajeResponse" />
+  <xs:element name="mostrarPorcentajeXPrenda" type="tns:mostrarPorcentajeXPrenda" />
+  <xs:element name="mostrarPorcentajeXPrendaResponse" type="tns:mostrarPorcentajeXPrendaResponse" />
+  <xs:element name="mostrar_descuentosporcentaje" type="tns:mostrar_descuentosporcentaje" />
+  <xs:element name="mostrar_descuentosporcentajeResponse" type="tns:mostrar_descuentosporcentajeResponse" />
+  <xs:element name="mostrar_descuentosporcentajeactivos" type="tns:mostrar_descuentosporcentajeactivos" />
+  <xs:element name="mostrar_descuentosporcentajeactivosResponse" type="tns:mostrar_descuentosporcentajeactivosResponse" />
+  <xs:element name="obtenerPorId" type="tns:obtenerPorId" />
+  <xs:element name="obtenerPorIdResponse" type="tns:obtenerPorIdResponse" />
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosporcentaje">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosporcentajeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoPorcentaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descuentoPorcentaje">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:descuento">
+        <xs:sequence>
+          <xs:element name="porcentaje" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="descuento" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="esAutomatico" type="xs:boolean" />
+      <xs:element name="idDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vigencia">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idVigencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDescuentoPorcentaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datDesc" type="tns:descuentoPorcentaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDescuentoPorcentajeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoPorcentaje">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoPorcentajeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDescuento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datDesc" type="tns:descuentoPorcentaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDescuentoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorId">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:descuentoPorcentaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaPorcentaje">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="idPrendas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaPorcentajeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrarPorcentajeXPrenda">
+    <xs:sequence>
+      <xs:element name="idPrenda" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrarPorcentajeXPrendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoPorcentaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosporcentajeactivos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_descuentosporcentajeactivosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuentoPorcentaje" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

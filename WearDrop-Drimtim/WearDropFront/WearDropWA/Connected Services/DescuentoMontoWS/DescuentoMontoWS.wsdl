@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://descuentos.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="DescuentoMontoWS" targetNamespace="http://descuentos.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/DescuentoMontoWS?xsd=1" namespace="http://descuentos.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="mostrar_descuentosmontosactivos">
+    <part name="parameters" element="tns:mostrar_descuentosmontosactivos" />
+  </message>
+  <message name="mostrar_descuentosmontosactivosResponse">
+    <part name="parameters" element="tns:mostrar_descuentosmontosactivosResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="insertarDescuentoMonto">
+    <part name="parameters" element="tns:insertarDescuentoMonto" />
+  </message>
+  <message name="insertarDescuentoMontoResponse">
+    <part name="parameters" element="tns:insertarDescuentoMontoResponse" />
+  </message>
+  <message name="modificarDescuentoMonto">
+    <part name="parameters" element="tns:modificarDescuentoMonto" />
+  </message>
+  <message name="modificarDescuentoMontoResponse">
+    <part name="parameters" element="tns:modificarDescuentoMontoResponse" />
+  </message>
+  <message name="mostrar_descuentosmontos">
+    <part name="parameters" element="tns:mostrar_descuentosmontos" />
+  </message>
+  <message name="mostrar_descuentosmontosResponse">
+    <part name="parameters" element="tns:mostrar_descuentosmontosResponse" />
+  </message>
+  <message name="eliminarDescuentoMonto">
+    <part name="parameters" element="tns:eliminarDescuentoMonto" />
+  </message>
+  <message name="eliminarDescuentoMontoResponse">
+    <part name="parameters" element="tns:eliminarDescuentoMontoResponse" />
+  </message>
+  <message name="obtenerXIdMonto">
+    <part name="parameters" element="tns:obtenerXIdMonto" />
+  </message>
+  <message name="obtenerXIdMontoResponse">
+    <part name="parameters" element="tns:obtenerXIdMontoResponse" />
+  </message>
+  <message name="mostrarMontoXPrenda">
+    <part name="parameters" element="tns:mostrarMontoXPrenda" />
+  </message>
+  <message name="mostrarMontoXPrendaResponse">
+    <part name="parameters" element="tns:mostrarMontoXPrendaResponse" />
+  </message>
+  <message name="insertarPrendaMonto">
+    <part name="parameters" element="tns:insertarPrendaMonto" />
+  </message>
+  <message name="insertarPrendaMontoResponse">
+    <part name="parameters" element="tns:insertarPrendaMontoResponse" />
+  </message>
+  <portType name="DescuentoMontoWS">
+    <operation name="mostrar_descuentosmontosactivos">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/mostrar_descuentosmontosactivosRequest" message="tns:mostrar_descuentosmontosactivos" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/mostrar_descuentosmontosactivosResponse" message="tns:mostrar_descuentosmontosactivosResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="insertarDescuentoMonto">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/insertarDescuentoMontoRequest" message="tns:insertarDescuentoMonto" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/insertarDescuentoMontoResponse" message="tns:insertarDescuentoMontoResponse" />
+    </operation>
+    <operation name="modificarDescuentoMonto">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/modificarDescuentoMontoRequest" message="tns:modificarDescuentoMonto" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/modificarDescuentoMontoResponse" message="tns:modificarDescuentoMontoResponse" />
+    </operation>
+    <operation name="mostrar_descuentosmontos">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/mostrar_descuentosmontosRequest" message="tns:mostrar_descuentosmontos" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/mostrar_descuentosmontosResponse" message="tns:mostrar_descuentosmontosResponse" />
+    </operation>
+    <operation name="eliminarDescuentoMonto">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/eliminarDescuentoMontoRequest" message="tns:eliminarDescuentoMonto" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/eliminarDescuentoMontoResponse" message="tns:eliminarDescuentoMontoResponse" />
+    </operation>
+    <operation name="obtenerXIdMonto">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/obtenerXIdMontoRequest" message="tns:obtenerXIdMonto" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/obtenerXIdMontoResponse" message="tns:obtenerXIdMontoResponse" />
+    </operation>
+    <operation name="mostrarMontoXPrenda">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/mostrarMontoXPrendaRequest" message="tns:mostrarMontoXPrenda" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/mostrarMontoXPrendaResponse" message="tns:mostrarMontoXPrendaResponse" />
+    </operation>
+    <operation name="insertarPrendaMonto">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/insertarPrendaMontoRequest" message="tns:insertarPrendaMonto" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoMontoWS/insertarPrendaMontoResponse" message="tns:insertarPrendaMontoResponse" />
+    </operation>
+  </portType>
+  <binding name="DescuentoMontoWSPortBinding" type="tns:DescuentoMontoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="mostrar_descuentosmontosactivos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDescuentoMonto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarDescuentoMonto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrar_descuentosmontos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarDescuentoMonto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerXIdMonto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrarMontoXPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPrendaMonto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DescuentoMontoWS">
+    <port name="DescuentoMontoWSPort" binding="tns:DescuentoMontoWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/DescuentoMontoWS" />
+    </port>
+  </service>
+</definitions>

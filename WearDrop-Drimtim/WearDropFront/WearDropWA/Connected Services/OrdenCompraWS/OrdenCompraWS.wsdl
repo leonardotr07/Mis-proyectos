@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://comprastienda.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="OrdenCompraWS" targetNamespace="http://comprastienda.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/OrdenCompraWS?xsd=1" namespace="http://comprastienda.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listarTodasLasOrdenesDeCompra">
+    <part name="parameters" element="tns:listarTodasLasOrdenesDeCompra" />
+  </message>
+  <message name="listarTodasLasOrdenesDeCompraResponse">
+    <part name="parameters" element="tns:listarTodasLasOrdenesDeCompraResponse" />
+  </message>
+  <message name="modificarOrdeneDeCompra">
+    <part name="parameters" element="tns:modificarOrdeneDeCompra" />
+  </message>
+  <message name="modificarOrdeneDeCompraResponse">
+    <part name="parameters" element="tns:modificarOrdeneDeCompraResponse" />
+  </message>
+  <message name="obtenerOrdenDeCompraPorID">
+    <part name="parameters" element="tns:obtenerOrdenDeCompraPorID" />
+  </message>
+  <message name="obtenerOrdenDeCompraPorIDResponse">
+    <part name="parameters" element="tns:obtenerOrdenDeCompraPorIDResponse" />
+  </message>
+  <message name="eliminarOrdenDeCompra">
+    <part name="parameters" element="tns:eliminarOrdenDeCompra" />
+  </message>
+  <message name="eliminarOrdenDeCompraResponse">
+    <part name="parameters" element="tns:eliminarOrdenDeCompraResponse" />
+  </message>
+  <message name="insertarOrdenDeCompra">
+    <part name="parameters" element="tns:insertarOrdenDeCompra" />
+  </message>
+  <message name="insertarOrdenDeCompraResponse">
+    <part name="parameters" element="tns:insertarOrdenDeCompraResponse" />
+  </message>
+  <portType name="OrdenCompraWS">
+    <operation name="listarTodasLasOrdenesDeCompra">
+      <input wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/listarTodasLasOrdenesDeCompraRequest" message="tns:listarTodasLasOrdenesDeCompra" />
+      <output wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/listarTodasLasOrdenesDeCompraResponse" message="tns:listarTodasLasOrdenesDeCompraResponse" />
+    </operation>
+    <operation name="modificarOrdeneDeCompra">
+      <input wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/modificarOrdeneDeCompraRequest" message="tns:modificarOrdeneDeCompra" />
+      <output wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/modificarOrdeneDeCompraResponse" message="tns:modificarOrdeneDeCompraResponse" />
+    </operation>
+    <operation name="obtenerOrdenDeCompraPorID">
+      <input wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/obtenerOrdenDeCompraPorIDRequest" message="tns:obtenerOrdenDeCompraPorID" />
+      <output wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/obtenerOrdenDeCompraPorIDResponse" message="tns:obtenerOrdenDeCompraPorIDResponse" />
+    </operation>
+    <operation name="eliminarOrdenDeCompra">
+      <input wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/eliminarOrdenDeCompraRequest" message="tns:eliminarOrdenDeCompra" />
+      <output wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/eliminarOrdenDeCompraResponse" message="tns:eliminarOrdenDeCompraResponse" />
+    </operation>
+    <operation name="insertarOrdenDeCompra">
+      <input wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/insertarOrdenDeCompraRequest" message="tns:insertarOrdenDeCompra" />
+      <output wsam:Action="http://comprastienda.services.weardrop.pucp.edu.pe/OrdenCompraWS/insertarOrdenDeCompraResponse" message="tns:insertarOrdenDeCompraResponse" />
+    </operation>
+  </portType>
+  <binding name="OrdenCompraWSPortBinding" type="tns:OrdenCompraWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarTodasLasOrdenesDeCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarOrdeneDeCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerOrdenDeCompraPorID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarOrdenDeCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarOrdenDeCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="OrdenCompraWS">
+    <port name="OrdenCompraWSPort" binding="tns:OrdenCompraWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/OrdenCompraWS" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://promociones.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PromocionConjuntoWS" targetNamespace="http://promociones.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/PromocionConjuntoWS?xsd=1" namespace="http://promociones.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="mostrar_promocionesconjunto">
+    <part name="parameters" element="tns:mostrar_promocionesconjunto" />
+  </message>
+  <message name="mostrar_promocionesconjuntoResponse">
+    <part name="parameters" element="tns:mostrar_promocionesconjuntoResponse" />
+  </message>
+  <message name="mostrar_promocionesconjuntoactivos">
+    <part name="parameters" element="tns:mostrar_promocionesconjuntoactivos" />
+  </message>
+  <message name="mostrar_promocionesconjuntoactivosResponse">
+    <part name="parameters" element="tns:mostrar_promocionesconjuntoactivosResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="insertarPromocionConjunto">
+    <part name="parameters" element="tns:insertarPromocionConjunto" />
+  </message>
+  <message name="insertarPromocionConjuntoResponse">
+    <part name="parameters" element="tns:insertarPromocionConjuntoResponse" />
+  </message>
+  <message name="eliminarPromocionConjunto">
+    <part name="parameters" element="tns:eliminarPromocionConjunto" />
+  </message>
+  <message name="eliminarPromocionConjuntoResponse">
+    <part name="parameters" element="tns:eliminarPromocionConjuntoResponse" />
+  </message>
+  <message name="insertarPrendaConjunto">
+    <part name="parameters" element="tns:insertarPrendaConjunto" />
+  </message>
+  <message name="insertarPrendaConjuntoResponse">
+    <part name="parameters" element="tns:insertarPrendaConjuntoResponse" />
+  </message>
+  <message name="obtenerPorIdConjunto">
+    <part name="parameters" element="tns:obtenerPorIdConjunto" />
+  </message>
+  <message name="obtenerPorIdConjuntoResponse">
+    <part name="parameters" element="tns:obtenerPorIdConjuntoResponse" />
+  </message>
+  <message name="mostrarConjuntoXPrenda">
+    <part name="parameters" element="tns:mostrarConjuntoXPrenda" />
+  </message>
+  <message name="mostrarConjuntoXPrendaResponse">
+    <part name="parameters" element="tns:mostrarConjuntoXPrendaResponse" />
+  </message>
+  <message name="modificarPromocionConjunto">
+    <part name="parameters" element="tns:modificarPromocionConjunto" />
+  </message>
+  <message name="modificarPromocionConjuntoResponse">
+    <part name="parameters" element="tns:modificarPromocionConjuntoResponse" />
+  </message>
+  <portType name="PromocionConjuntoWS">
+    <operation name="mostrar_promocionesconjunto">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/mostrar_promocionesconjuntoRequest" message="tns:mostrar_promocionesconjunto" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/mostrar_promocionesconjuntoResponse" message="tns:mostrar_promocionesconjuntoResponse" />
+    </operation>
+    <operation name="mostrar_promocionesconjuntoactivos">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/mostrar_promocionesconjuntoactivosRequest" message="tns:mostrar_promocionesconjuntoactivos" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/mostrar_promocionesconjuntoactivosResponse" message="tns:mostrar_promocionesconjuntoactivosResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="insertarPromocionConjunto">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/insertarPromocionConjuntoRequest" message="tns:insertarPromocionConjunto" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/insertarPromocionConjuntoResponse" message="tns:insertarPromocionConjuntoResponse" />
+    </operation>
+    <operation name="eliminarPromocionConjunto">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/eliminarPromocionConjuntoRequest" message="tns:eliminarPromocionConjunto" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/eliminarPromocionConjuntoResponse" message="tns:eliminarPromocionConjuntoResponse" />
+    </operation>
+    <operation name="insertarPrendaConjunto">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/insertarPrendaConjuntoRequest" message="tns:insertarPrendaConjunto" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/insertarPrendaConjuntoResponse" message="tns:insertarPrendaConjuntoResponse" />
+    </operation>
+    <operation name="obtenerPorIdConjunto">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/obtenerPorIdConjuntoRequest" message="tns:obtenerPorIdConjunto" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/obtenerPorIdConjuntoResponse" message="tns:obtenerPorIdConjuntoResponse" />
+    </operation>
+    <operation name="mostrarConjuntoXPrenda">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/mostrarConjuntoXPrendaRequest" message="tns:mostrarConjuntoXPrenda" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/mostrarConjuntoXPrendaResponse" message="tns:mostrarConjuntoXPrendaResponse" />
+    </operation>
+    <operation name="modificarPromocionConjunto">
+      <input wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/modificarPromocionConjuntoRequest" message="tns:modificarPromocionConjunto" />
+      <output wsam:Action="http://promociones.services.weardrop.pucp.edu.pe/PromocionConjuntoWS/modificarPromocionConjuntoResponse" message="tns:modificarPromocionConjuntoResponse" />
+    </operation>
+  </portType>
+  <binding name="PromocionConjuntoWSPortBinding" type="tns:PromocionConjuntoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="mostrar_promocionesconjunto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrar_promocionesconjuntoactivos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPromocionConjunto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPromocionConjunto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPrendaConjunto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPorIdConjunto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrarConjuntoXPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPromocionConjunto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PromocionConjuntoWS">
+    <port name="PromocionConjuntoWSPort" binding="tns:PromocionConjuntoWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/PromocionConjuntoWS" />
+    </port>
+  </service>
+</definitions>

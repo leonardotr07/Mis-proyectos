@@ -1,0 +1,122 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
+ */
+package pe.edu.pucp.weardrop.services.descuentos;
+
+import jakarta.jws.WebService;
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebParam;
+import java.util.ArrayList;
+
+import java.util.List;
+
+import pe.edu.pucp.weardrop.descuento.boi.DescuentoMontoBOI;
+import pe.edu.pucp.weardrop.descuento.bo.DescuentoMontoBOImpl;
+import pe.edu.pucp.weardrop.promocionesdescuentos.DescuentoMonto;
+/**
+ *
+ * @author leona
+ */
+@WebService(serviceName = "DescuentoMontoWS")
+public class DescuentoMontoWS {
+    private final DescuentoMontoBOI boDesc=new DescuentoMontoBOImpl();
+
+    /**
+     * This is a sample web service operation
+     */
+    @WebMethod(operationName = "hello")
+    public String hello(@WebParam(name = "name") String txt) {
+        return "Hello " + txt + " !";
+    }
+    
+    @WebMethod(operationName = "mostrar_descuentosmontos")
+    public List<DescuentoMonto> mostrar_descuentosmontos(){
+        List<DescuentoMonto> listaDesc=null;
+        try{
+            listaDesc=boDesc.listarTodos();
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return listaDesc;
+    }
+    @WebMethod(operationName = "mostrar_descuentosmontosactivos")
+    public List<DescuentoMonto> mostrar_descuentosmontosactivos(){
+        List<DescuentoMonto> listaDesc=null;
+        try{
+            listaDesc=boDesc.listarActivos();
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return listaDesc;
+    }
+    
+   
+    @WebMethod(operationName = "insertarDescuentoMonto")
+    public int insertarDescuentoMonto(@WebParam(name="datDesc") DescuentoMonto datDesc){
+        int resultado=0;
+        try{
+            resultado=boDesc.insertar(datDesc);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    //Para modificar Almacen
+    @WebMethod(operationName = "modificarDescuentoMonto")
+    public int modificarDescuentoMonto(@WebParam(name="datDesc") DescuentoMonto datDesc){
+        int resultado=0;
+        try{
+            resultado=boDesc.modificar(datDesc);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarDescuentoMonto")
+    public int eliminarDescuentoMonto(@WebParam(name="idDesc") int idDesc){
+        int resultado=0;
+        try{
+            resultado=boDesc.eliminar(idDesc);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    //Para Obtener Por ID
+    
+    @WebMethod(operationName = "obtenerXIdMonto")
+    public DescuentoMonto obtenerXIdMonto(@WebParam(name="idDesc") int idDesc){
+        DescuentoMonto datProm=null;
+        try{
+            datProm=boDesc.obtenerXId(idDesc);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return datProm;
+    }
+    @WebMethod(operationName = "mostrarMontoXPrenda")
+    public List<DescuentoMonto> mostrarMontoXPrenda(@WebParam(name="idPrenda") int idPrenda){
+        List<DescuentoMonto> listaProm=null;
+        try{
+            listaProm=boDesc.listarPorPrenda(idPrenda);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return listaProm;
+    }
+    @WebMethod(operationName = "insertarPrendaMonto")
+    public void insertarPrendaMonto(@WebParam(name="idDesc") int idDesc, @WebParam(name="idPrendas") List<Integer> idPrendas){
+        int resultado=0;
+        try{
+            boDesc.insertar_PrendaDescuento(idDesc, idPrendas);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return;
+    }
+}
+

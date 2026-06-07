@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://promociones.services.weardrop.pucp.edu.pe/" targetNamespace="http://promociones.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarPromocionConjunto" type="tns:eliminarPromocionConjunto" />
+  <xs:element name="eliminarPromocionConjuntoResponse" type="tns:eliminarPromocionConjuntoResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="insertarPrendaConjunto" type="tns:insertarPrendaConjunto" />
+  <xs:element name="insertarPrendaConjuntoResponse" type="tns:insertarPrendaConjuntoResponse" />
+  <xs:element name="insertarPromocionConjunto" type="tns:insertarPromocionConjunto" />
+  <xs:element name="insertarPromocionConjuntoResponse" type="tns:insertarPromocionConjuntoResponse" />
+  <xs:element name="modificarPromocionConjunto" type="tns:modificarPromocionConjunto" />
+  <xs:element name="modificarPromocionConjuntoResponse" type="tns:modificarPromocionConjuntoResponse" />
+  <xs:element name="mostrarConjuntoXPrenda" type="tns:mostrarConjuntoXPrenda" />
+  <xs:element name="mostrarConjuntoXPrendaResponse" type="tns:mostrarConjuntoXPrendaResponse" />
+  <xs:element name="mostrar_promocionesconjunto" type="tns:mostrar_promocionesconjunto" />
+  <xs:element name="mostrar_promocionesconjuntoResponse" type="tns:mostrar_promocionesconjuntoResponse" />
+  <xs:element name="mostrar_promocionesconjuntoactivos" type="tns:mostrar_promocionesconjuntoactivos" />
+  <xs:element name="mostrar_promocionesconjuntoactivosResponse" type="tns:mostrar_promocionesconjuntoactivosResponse" />
+  <xs:element name="obtenerPorIdConjunto" type="tns:obtenerPorIdConjunto" />
+  <xs:element name="obtenerPorIdConjuntoResponse" type="tns:obtenerPorIdConjuntoResponse" />
+  <xs:complexType name="eliminarPromocionConjunto">
+    <xs:sequence>
+      <xs:element name="idProm" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPromocionConjuntoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorIdConjunto">
+    <xs:sequence>
+      <xs:element name="idProm" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorIdConjuntoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:promocionConjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="promocionConjunto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:promocion">
+        <xs:sequence>
+          <xs:element name="porcentajePromocion" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="promocion" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="esAutomatico" type="xs:boolean" />
+      <xs:element name="idPromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vigencia">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element name="idVigencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_promocionesconjunto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_promocionesconjuntoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocionConjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrar_promocionesconjuntoactivos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrar_promocionesconjuntoactivosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocionConjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaConjunto">
+    <xs:sequence>
+      <xs:element name="idDesc" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="idPrendas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPrendaConjuntoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mostrarConjuntoXPrenda">
+    <xs:sequence>
+      <xs:element name="idPrenda" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mostrarConjuntoXPrendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocionConjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPromocionConjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datProm" type="tns:promocionConjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPromocionConjuntoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocionConjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datProm" type="tns:promocionConjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocionConjuntoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

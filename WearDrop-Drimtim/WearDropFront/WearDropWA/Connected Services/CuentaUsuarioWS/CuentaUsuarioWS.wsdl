@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://personal.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="CuentaUsuarioWS" targetNamespace="http://personal.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/CuentaUsuarioWS?xsd=1" namespace="http://personal.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="modificarCuentaUsuario">
+    <part name="parameters" element="tns:modificarCuentaUsuario" />
+  </message>
+  <message name="modificarCuentaUsuarioResponse">
+    <part name="parameters" element="tns:modificarCuentaUsuarioResponse" />
+  </message>
+  <message name="listarCuentasUsuario">
+    <part name="parameters" element="tns:listarCuentasUsuario" />
+  </message>
+  <message name="listarCuentasUsuarioResponse">
+    <part name="parameters" element="tns:listarCuentasUsuarioResponse" />
+  </message>
+  <message name="insertarCuentaUsuario">
+    <part name="parameters" element="tns:insertarCuentaUsuario" />
+  </message>
+  <message name="insertarCuentaUsuarioResponse">
+    <part name="parameters" element="tns:insertarCuentaUsuarioResponse" />
+  </message>
+  <message name="eliminarCuentaUsuario">
+    <part name="parameters" element="tns:eliminarCuentaUsuario" />
+  </message>
+  <message name="eliminarCuentaUsuarioResponse">
+    <part name="parameters" element="tns:eliminarCuentaUsuarioResponse" />
+  </message>
+  <message name="cambiarContrasenaConToken">
+    <part name="parameters" element="tns:cambiarContrasenaConToken" />
+  </message>
+  <message name="cambiarContrasenaConTokenResponse">
+    <part name="parameters" element="tns:cambiarContrasenaConTokenResponse" />
+  </message>
+  <message name="obtenerCuentaUsuarioPorId">
+    <part name="parameters" element="tns:obtenerCuentaUsuarioPorId" />
+  </message>
+  <message name="obtenerCuentaUsuarioPorIdResponse">
+    <part name="parameters" element="tns:obtenerCuentaUsuarioPorIdResponse" />
+  </message>
+  <message name="verificarCuentaUsuario">
+    <part name="parameters" element="tns:verificarCuentaUsuario" />
+  </message>
+  <message name="verificarCuentaUsuarioResponse">
+    <part name="parameters" element="tns:verificarCuentaUsuarioResponse" />
+  </message>
+  <message name="validarTokenRecuperacion">
+    <part name="parameters" element="tns:validarTokenRecuperacion" />
+  </message>
+  <message name="validarTokenRecuperacionResponse">
+    <part name="parameters" element="tns:validarTokenRecuperacionResponse" />
+  </message>
+  <message name="solicitarRecuperacionContrasena">
+    <part name="parameters" element="tns:solicitarRecuperacionContrasena" />
+  </message>
+  <message name="solicitarRecuperacionContrasenaResponse">
+    <part name="parameters" element="tns:solicitarRecuperacionContrasenaResponse" />
+  </message>
+  <portType name="CuentaUsuarioWS">
+    <operation name="modificarCuentaUsuario">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/modificarCuentaUsuarioRequest" message="tns:modificarCuentaUsuario" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/modificarCuentaUsuarioResponse" message="tns:modificarCuentaUsuarioResponse" />
+    </operation>
+    <operation name="listarCuentasUsuario">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/listarCuentasUsuarioRequest" message="tns:listarCuentasUsuario" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/listarCuentasUsuarioResponse" message="tns:listarCuentasUsuarioResponse" />
+    </operation>
+    <operation name="insertarCuentaUsuario">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaUsuarioRequest" message="tns:insertarCuentaUsuario" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/insertarCuentaUsuarioResponse" message="tns:insertarCuentaUsuarioResponse" />
+    </operation>
+    <operation name="eliminarCuentaUsuario">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/eliminarCuentaUsuarioRequest" message="tns:eliminarCuentaUsuario" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/eliminarCuentaUsuarioResponse" message="tns:eliminarCuentaUsuarioResponse" />
+    </operation>
+    <operation name="cambiarContrasenaConToken">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/cambiarContrasenaConTokenRequest" message="tns:cambiarContrasenaConToken" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/cambiarContrasenaConTokenResponse" message="tns:cambiarContrasenaConTokenResponse" />
+    </operation>
+    <operation name="obtenerCuentaUsuarioPorId">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/obtenerCuentaUsuarioPorIdRequest" message="tns:obtenerCuentaUsuarioPorId" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/obtenerCuentaUsuarioPorIdResponse" message="tns:obtenerCuentaUsuarioPorIdResponse" />
+    </operation>
+    <operation name="verificarCuentaUsuario">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaUsuarioRequest" message="tns:verificarCuentaUsuario" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/verificarCuentaUsuarioResponse" message="tns:verificarCuentaUsuarioResponse" />
+    </operation>
+    <operation name="validarTokenRecuperacion">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/validarTokenRecuperacionRequest" message="tns:validarTokenRecuperacion" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/validarTokenRecuperacionResponse" message="tns:validarTokenRecuperacionResponse" />
+    </operation>
+    <operation name="solicitarRecuperacionContrasena">
+      <input wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/solicitarRecuperacionContrasenaRequest" message="tns:solicitarRecuperacionContrasena" />
+      <output wsam:Action="http://personal.services.weardrop.pucp.edu.pe/CuentaUsuarioWS/solicitarRecuperacionContrasenaResponse" message="tns:solicitarRecuperacionContrasenaResponse" />
+    </operation>
+  </portType>
+  <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarCuentaUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCuentasUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCuentaUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCuentaUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cambiarContrasenaConToken">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerCuentaUsuarioPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificarCuentaUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="validarTokenRecuperacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="solicitarRecuperacionContrasena">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CuentaUsuarioWS">
+    <port name="CuentaUsuarioWSPort" binding="tns:CuentaUsuarioWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/CuentaUsuarioWS" />
+    </port>
+  </service>
+</definitions>

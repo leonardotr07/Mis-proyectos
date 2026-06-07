@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://personal.services.weardrop.pucp.edu.pe/" targetNamespace="http://personal.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cambiarContrasenaConToken" type="tns:cambiarContrasenaConToken" />
+  <xs:element name="cambiarContrasenaConTokenResponse" type="tns:cambiarContrasenaConTokenResponse" />
+  <xs:element name="eliminarCuentaUsuario" type="tns:eliminarCuentaUsuario" />
+  <xs:element name="eliminarCuentaUsuarioResponse" type="tns:eliminarCuentaUsuarioResponse" />
+  <xs:element name="insertarCuentaUsuario" type="tns:insertarCuentaUsuario" />
+  <xs:element name="insertarCuentaUsuarioResponse" type="tns:insertarCuentaUsuarioResponse" />
+  <xs:element name="listarCuentasUsuario" type="tns:listarCuentasUsuario" />
+  <xs:element name="listarCuentasUsuarioResponse" type="tns:listarCuentasUsuarioResponse" />
+  <xs:element name="modificarCuentaUsuario" type="tns:modificarCuentaUsuario" />
+  <xs:element name="modificarCuentaUsuarioResponse" type="tns:modificarCuentaUsuarioResponse" />
+  <xs:element name="obtenerCuentaUsuarioPorId" type="tns:obtenerCuentaUsuarioPorId" />
+  <xs:element name="obtenerCuentaUsuarioPorIdResponse" type="tns:obtenerCuentaUsuarioPorIdResponse" />
+  <xs:element name="solicitarRecuperacionContrasena" type="tns:solicitarRecuperacionContrasena" />
+  <xs:element name="solicitarRecuperacionContrasenaResponse" type="tns:solicitarRecuperacionContrasenaResponse" />
+  <xs:element name="validarTokenRecuperacion" type="tns:validarTokenRecuperacion" />
+  <xs:element name="validarTokenRecuperacionResponse" type="tns:validarTokenRecuperacionResponse" />
+  <xs:element name="verificarCuentaUsuario" type="tns:verificarCuentaUsuario" />
+  <xs:element name="verificarCuentaUsuarioResponse" type="tns:verificarCuentaUsuarioResponse" />
+  <xs:complexType name="verificarCuentaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaUsuario" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuentaUsuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="empleado" type="tns:empleado" />
+      <xs:element name="idCuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoCuenta" />
+      <xs:element minOccurs="0" name="tokenExpiracion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="tokenRecuperacion" type="xs:string" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="cargoAsignado" type="tns:cargo" />
+          <xs:element name="idEmpleado" type="xs:int" />
+          <xs:element name="sueldo" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="dni" type="xs:int" />
+      <xs:element name="genero" type="xs:unsignedShort" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="primerApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="segundoApellido" type="xs:string" />
+      <xs:element name="telefono" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cargo">
+    <xs:sequence>
+      <xs:element name="abreviatura" type="xs:unsignedShort" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idCargo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoCuenta">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idTipoCuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambiarContrasenaConToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="token" type="xs:string" />
+      <xs:element minOccurs="0" name="nuevaContrasena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambiarContrasenaConTokenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerCuentaUsuarioPorId">
+    <xs:sequence>
+      <xs:element name="idCuentaUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerCuentaUsuarioPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCuentaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cuentaUsuario" type="tns:cuentaUsuario" />
+      <xs:element minOccurs="0" name="modo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCuentaUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCuentaUsuario">
+    <xs:sequence>
+      <xs:element name="idCuentaUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCuentaUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validarTokenRecuperacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="token" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validarTokenRecuperacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitarRecuperacionContrasena">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitarRecuperacionContrasenaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCuentasUsuario">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCuentasUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCuentaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cuentaUsuario" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCuentaUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

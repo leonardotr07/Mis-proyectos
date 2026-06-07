@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://prendas.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PrendaLoteWS" targetNamespace="http://prendas.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/PrendaLoteWS?xsd=1" namespace="http://prendas.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarPrendaLote">
+    <part name="parameters" element="tns:eliminarPrendaLote" />
+  </message>
+  <message name="eliminarPrendaLoteResponse">
+    <part name="parameters" element="tns:eliminarPrendaLoteResponse" />
+  </message>
+  <message name="buscarPrendaPorAtributos">
+    <part name="parameters" element="tns:buscarPrendaPorAtributos" />
+  </message>
+  <message name="buscarPrendaPorAtributosResponse">
+    <part name="parameters" element="tns:buscarPrendaPorAtributosResponse" />
+  </message>
+  <message name="listarPorIDPrenda">
+    <part name="parameters" element="tns:listarPorIDPrenda" />
+  </message>
+  <message name="listarPorIDPrendaResponse">
+    <part name="parameters" element="tns:listarPorIDPrendaResponse" />
+  </message>
+  <message name="buscarPrendaPorId">
+    <part name="parameters" element="tns:buscarPrendaPorId" />
+  </message>
+  <message name="buscarPrendaPorIdResponse">
+    <part name="parameters" element="tns:buscarPrendaPorIdResponse" />
+  </message>
+  <message name="modificarPrendaLote">
+    <part name="parameters" element="tns:modificarPrendaLote" />
+  </message>
+  <message name="modificarPrendaLoteResponse">
+    <part name="parameters" element="tns:modificarPrendaLoteResponse" />
+  </message>
+  <message name="obtenerStockPorTalla">
+    <part name="parameters" element="tns:obtenerStockPorTalla" />
+  </message>
+  <message name="obtenerStockPorTallaResponse">
+    <part name="parameters" element="tns:obtenerStockPorTallaResponse" />
+  </message>
+  <message name="listarMaterialesDistintos">
+    <part name="parameters" element="tns:listarMaterialesDistintos" />
+  </message>
+  <message name="listarMaterialesDistintosResponse">
+    <part name="parameters" element="tns:listarMaterialesDistintosResponse" />
+  </message>
+  <message name="obtenerPrendaLotePorId">
+    <part name="parameters" element="tns:obtenerPrendaLotePorId" />
+  </message>
+  <message name="obtenerPrendaLotePorIdResponse">
+    <part name="parameters" element="tns:obtenerPrendaLotePorIdResponse" />
+  </message>
+  <message name="listarTodasPrendasLote">
+    <part name="parameters" element="tns:listarTodasPrendasLote" />
+  </message>
+  <message name="listarTodasPrendasLoteResponse">
+    <part name="parameters" element="tns:listarTodasPrendasLoteResponse" />
+  </message>
+  <message name="listarNombresDistintos">
+    <part name="parameters" element="tns:listarNombresDistintos" />
+  </message>
+  <message name="listarNombresDistintosResponse">
+    <part name="parameters" element="tns:listarNombresDistintosResponse" />
+  </message>
+  <message name="existePrendaTallaEnLote">
+    <part name="parameters" element="tns:existePrendaTallaEnLote" />
+  </message>
+  <message name="existePrendaTallaEnLoteResponse">
+    <part name="parameters" element="tns:existePrendaTallaEnLoteResponse" />
+  </message>
+  <message name="insertarPrendaLote">
+    <part name="parameters" element="tns:insertarPrendaLote" />
+  </message>
+  <message name="insertarPrendaLoteResponse">
+    <part name="parameters" element="tns:insertarPrendaLoteResponse" />
+  </message>
+  <message name="listarPrendasPorLote">
+    <part name="parameters" element="tns:listarPrendasPorLote" />
+  </message>
+  <message name="listarPrendasPorLoteResponse">
+    <part name="parameters" element="tns:listarPrendasPorLoteResponse" />
+  </message>
+  <message name="listarColoresDistintos">
+    <part name="parameters" element="tns:listarColoresDistintos" />
+  </message>
+  <message name="listarColoresDistintosResponse">
+    <part name="parameters" element="tns:listarColoresDistintosResponse" />
+  </message>
+  <portType name="PrendaLoteWS">
+    <operation name="eliminarPrendaLote">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteRequest" message="tns:eliminarPrendaLote" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/eliminarPrendaLoteResponse" message="tns:eliminarPrendaLoteResponse" />
+    </operation>
+    <operation name="buscarPrendaPorAtributos">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributosRequest" message="tns:buscarPrendaPorAtributos" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorAtributosResponse" message="tns:buscarPrendaPorAtributosResponse" />
+    </operation>
+    <operation name="listarPorIDPrenda">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPorIDPrendaRequest" message="tns:listarPorIDPrenda" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPorIDPrendaResponse" message="tns:listarPorIDPrendaResponse" />
+    </operation>
+    <operation name="buscarPrendaPorId">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorIdRequest" message="tns:buscarPrendaPorId" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/buscarPrendaPorIdResponse" message="tns:buscarPrendaPorIdResponse" />
+    </operation>
+    <operation name="modificarPrendaLote">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteRequest" message="tns:modificarPrendaLote" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/modificarPrendaLoteResponse" message="tns:modificarPrendaLoteResponse" />
+    </operation>
+    <operation name="obtenerStockPorTalla">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaRequest" message="tns:obtenerStockPorTalla" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerStockPorTallaResponse" message="tns:obtenerStockPorTallaResponse" />
+    </operation>
+    <operation name="listarMaterialesDistintos">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistintosRequest" message="tns:listarMaterialesDistintos" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarMaterialesDistintosResponse" message="tns:listarMaterialesDistintosResponse" />
+    </operation>
+    <operation name="obtenerPrendaLotePorId">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerPrendaLotePorIdRequest" message="tns:obtenerPrendaLotePorId" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/obtenerPrendaLotePorIdResponse" message="tns:obtenerPrendaLotePorIdResponse" />
+    </operation>
+    <operation name="listarTodasPrendasLote">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteRequest" message="tns:listarTodasPrendasLote" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarTodasPrendasLoteResponse" message="tns:listarTodasPrendasLoteResponse" />
+    </operation>
+    <operation name="listarNombresDistintos">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosRequest" message="tns:listarNombresDistintos" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarNombresDistintosResponse" message="tns:listarNombresDistintosResponse" />
+    </operation>
+    <operation name="existePrendaTallaEnLote">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLoteRequest" message="tns:existePrendaTallaEnLote" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/existePrendaTallaEnLoteResponse" message="tns:existePrendaTallaEnLoteResponse" />
+    </operation>
+    <operation name="insertarPrendaLote">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteRequest" message="tns:insertarPrendaLote" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/insertarPrendaLoteResponse" message="tns:insertarPrendaLoteResponse" />
+    </operation>
+    <operation name="listarPrendasPorLote">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteRequest" message="tns:listarPrendasPorLote" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarPrendasPorLoteResponse" message="tns:listarPrendasPorLoteResponse" />
+    </operation>
+    <operation name="listarColoresDistintos">
+      <input wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosRequest" message="tns:listarColoresDistintos" />
+      <output wsam:Action="http://prendas.services.weardrop.pucp.edu.pe/PrendaLoteWS/listarColoresDistintosResponse" message="tns:listarColoresDistintosResponse" />
+    </operation>
+  </portType>
+  <binding name="PrendaLoteWSPortBinding" type="tns:PrendaLoteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarPrendaLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPrendaPorAtributos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPorIDPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPrendaPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPrendaLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerStockPorTalla">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMaterialesDistintos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPrendaLotePorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodasPrendasLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarNombresDistintos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="existePrendaTallaEnLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPrendaLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPrendasPorLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColoresDistintos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PrendaLoteWS">
+    <port name="PrendaLoteWSPort" binding="tns:PrendaLoteWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/PrendaLoteWS" />
+    </port>
+  </service>
+</definitions>

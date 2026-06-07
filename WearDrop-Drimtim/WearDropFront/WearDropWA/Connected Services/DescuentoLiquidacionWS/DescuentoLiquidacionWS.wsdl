@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://descuentos.services.weardrop.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="DescuentoLiquidacionWS" targetNamespace="http://descuentos.services.weardrop.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WearDropWS/DescuentoLiquidacionWS?xsd=1" namespace="http://descuentos.services.weardrop.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="mostrar_descuentosliquidacionactivos">
+    <part name="parameters" element="tns:mostrar_descuentosliquidacionactivos" />
+  </message>
+  <message name="mostrar_descuentosliquidacionactivosResponse">
+    <part name="parameters" element="tns:mostrar_descuentosliquidacionactivosResponse" />
+  </message>
+  <message name="modificarDecuentoLiquidacion">
+    <part name="parameters" element="tns:modificarDecuentoLiquidacion" />
+  </message>
+  <message name="modificarDecuentoLiquidacionResponse">
+    <part name="parameters" element="tns:modificarDecuentoLiquidacionResponse" />
+  </message>
+  <message name="insertarDescuentoLiquidacion">
+    <part name="parameters" element="tns:insertarDescuentoLiquidacion" />
+  </message>
+  <message name="insertarDescuentoLiquidacionResponse">
+    <part name="parameters" element="tns:insertarDescuentoLiquidacionResponse" />
+  </message>
+  <message name="mostrar_descuentosliquidacion">
+    <part name="parameters" element="tns:mostrar_descuentosliquidacion" />
+  </message>
+  <message name="mostrar_descuentosliquidacionResponse">
+    <part name="parameters" element="tns:mostrar_descuentosliquidacionResponse" />
+  </message>
+  <message name="eliminarDescuentoLiquidacion">
+    <part name="parameters" element="tns:eliminarDescuentoLiquidacion" />
+  </message>
+  <message name="eliminarDescuentoLiquidacionResponse">
+    <part name="parameters" element="tns:eliminarDescuentoLiquidacionResponse" />
+  </message>
+  <message name="obtenerXIdLiquidacion">
+    <part name="parameters" element="tns:obtenerXIdLiquidacion" />
+  </message>
+  <message name="obtenerXIdLiquidacionResponse">
+    <part name="parameters" element="tns:obtenerXIdLiquidacionResponse" />
+  </message>
+  <message name="mostrarLiquidacionXPrenda">
+    <part name="parameters" element="tns:mostrarLiquidacionXPrenda" />
+  </message>
+  <message name="mostrarLiquidacionXPrendaResponse">
+    <part name="parameters" element="tns:mostrarLiquidacionXPrendaResponse" />
+  </message>
+  <message name="insertarPrendaLiquidacion">
+    <part name="parameters" element="tns:insertarPrendaLiquidacion" />
+  </message>
+  <message name="insertarPrendaLiquidacionResponse">
+    <part name="parameters" element="tns:insertarPrendaLiquidacionResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <portType name="DescuentoLiquidacionWS">
+    <operation name="mostrar_descuentosliquidacionactivos">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/mostrar_descuentosliquidacionactivosRequest" message="tns:mostrar_descuentosliquidacionactivos" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/mostrar_descuentosliquidacionactivosResponse" message="tns:mostrar_descuentosliquidacionactivosResponse" />
+    </operation>
+    <operation name="modificarDecuentoLiquidacion">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/modificarDecuentoLiquidacionRequest" message="tns:modificarDecuentoLiquidacion" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/modificarDecuentoLiquidacionResponse" message="tns:modificarDecuentoLiquidacionResponse" />
+    </operation>
+    <operation name="insertarDescuentoLiquidacion">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/insertarDescuentoLiquidacionRequest" message="tns:insertarDescuentoLiquidacion" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/insertarDescuentoLiquidacionResponse" message="tns:insertarDescuentoLiquidacionResponse" />
+    </operation>
+    <operation name="mostrar_descuentosliquidacion">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/mostrar_descuentosliquidacionRequest" message="tns:mostrar_descuentosliquidacion" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/mostrar_descuentosliquidacionResponse" message="tns:mostrar_descuentosliquidacionResponse" />
+    </operation>
+    <operation name="eliminarDescuentoLiquidacion">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/eliminarDescuentoLiquidacionRequest" message="tns:eliminarDescuentoLiquidacion" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/eliminarDescuentoLiquidacionResponse" message="tns:eliminarDescuentoLiquidacionResponse" />
+    </operation>
+    <operation name="obtenerXIdLiquidacion">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/obtenerXIdLiquidacionRequest" message="tns:obtenerXIdLiquidacion" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/obtenerXIdLiquidacionResponse" message="tns:obtenerXIdLiquidacionResponse" />
+    </operation>
+    <operation name="mostrarLiquidacionXPrenda">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/mostrarLiquidacionXPrendaRequest" message="tns:mostrarLiquidacionXPrenda" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/mostrarLiquidacionXPrendaResponse" message="tns:mostrarLiquidacionXPrendaResponse" />
+    </operation>
+    <operation name="insertarPrendaLiquidacion">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/insertarPrendaLiquidacionRequest" message="tns:insertarPrendaLiquidacion" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/insertarPrendaLiquidacionResponse" message="tns:insertarPrendaLiquidacionResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://descuentos.services.weardrop.pucp.edu.pe/DescuentoLiquidacionWS/helloResponse" message="tns:helloResponse" />
+    </operation>
+  </portType>
+  <binding name="DescuentoLiquidacionWSPortBinding" type="tns:DescuentoLiquidacionWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="mostrar_descuentosliquidacionactivos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarDecuentoLiquidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDescuentoLiquidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrar_descuentosliquidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarDescuentoLiquidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerXIdLiquidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrarLiquidacionXPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPrendaLiquidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DescuentoLiquidacionWS">
+    <port name="DescuentoLiquidacionWSPort" binding="tns:DescuentoLiquidacionWSPortBinding">
+      <soap:address location="http://localhost:8080/WearDropWS/DescuentoLiquidacionWS" />
+    </port>
+  </service>
+</definitions>

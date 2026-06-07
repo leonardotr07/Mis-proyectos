@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a7806c10-f262-4362-9d22-92a29c00b415" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/WearDropWS/referenciasPrendas.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GorroWS.wsdl" MetadataType="Wsdl" ID="253398cc-f3d1-4e7e-abb0-39eb0fde090c" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/GorroWS?WSDL" />
+    <MetadataFile FileName="GorroWS.xsd" MetadataType="Schema" ID="9ead60b4-a536-4966-aec6-2e3643678b95" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/GorroWS?xsd=1" />
+    <MetadataFile FileName="CasacaWS.xsd" MetadataType="Schema" ID="bdd9af4f-0bc4-4726-a1a9-d8a86450cde7" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/CasacaWS?xsd=1" />
+    <MetadataFile FileName="VestidoWS.wsdl" MetadataType="Wsdl" ID="20d40b1e-29bb-4092-b277-1a7e7105ebf4" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/VestidoWS?WSDL" />
+    <MetadataFile FileName="referenciasPrendas.disco" MetadataType="Disco" ID="1f54b6b1-d8d7-486a-a5c7-1f47caa59494" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/referenciasPrendas.disco" />
+    <MetadataFile FileName="VestidoWS.xsd" MetadataType="Schema" ID="910f843f-0454-4a1c-a89a-4137997c1e87" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/VestidoWS?xsd=1" />
+    <MetadataFile FileName="BlusaWS.xsd" MetadataType="Schema" ID="20c3ad2e-1d5d-4f8f-bbc3-67efa9b7871b" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/BlusaWS?xsd=1" />
+    <MetadataFile FileName="FaldaWS.xsd" MetadataType="Schema" ID="e2a9c6fd-b5b8-4310-ab4f-71214a992e4b" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/FaldaWS?xsd=1" />
+    <MetadataFile FileName="CasacaWS.wsdl" MetadataType="Wsdl" ID="749d754d-db03-44d3-a805-ba2d5b086615" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/CasacaWS?WSDL" />
+    <MetadataFile FileName="PoloWS.xsd" MetadataType="Schema" ID="5563dd0c-6d25-43c3-b73b-1e4de9b77606" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/PoloWS?xsd=1" />
+    <MetadataFile FileName="PantalonWS.wsdl" MetadataType="Wsdl" ID="f3e12384-7a8a-4f70-bfe0-6bb1b639e169" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/PantalonWS?WSDL" />
+    <MetadataFile FileName="PrendaLoteWS.xsd" MetadataType="Schema" ID="83888751-e905-441e-a879-2a6e0221329c" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/PrendaLoteWS?xsd=1" />
+    <MetadataFile FileName="PrendaLoteWS.wsdl" MetadataType="Wsdl" ID="93c6355d-8347-4d7f-870e-085a92ae596f" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/PrendaLoteWS?WSDL" />
+    <MetadataFile FileName="PoloWS.wsdl" MetadataType="Wsdl" ID="06f007b0-58ff-4796-abba-5bb477f67f95" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/PoloWS?WSDL" />
+    <MetadataFile FileName="BlusaWS.wsdl" MetadataType="Wsdl" ID="faa422c9-2152-4c58-ab84-cacfb4fa1767" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/BlusaWS?WSDL" />
+    <MetadataFile FileName="FaldaWS.wsdl" MetadataType="Wsdl" ID="afaff711-e6d0-47e9-8deb-9bb5f1ce7eda" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/FaldaWS?WSDL" />
+    <MetadataFile FileName="PantalonWS.xsd" MetadataType="Schema" ID="0582a6f1-389a-4cee-bd99-31e890eaae5f" SourceId="1" SourceUrl="http://localhost:8080/WearDropWS/PantalonWS?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

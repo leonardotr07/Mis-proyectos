@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://personal.services.weardrop.pucp.edu.pe/" targetNamespace="http://personal.services.weardrop.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarTipoCuenta" type="tns:eliminarTipoCuenta" />
+  <xs:element name="eliminarTipoCuentaResponse" type="tns:eliminarTipoCuentaResponse" />
+  <xs:element name="insertarTipoCuenta" type="tns:insertarTipoCuenta" />
+  <xs:element name="insertarTipoCuentaResponse" type="tns:insertarTipoCuentaResponse" />
+  <xs:element name="listarTiposCuenta" type="tns:listarTiposCuenta" />
+  <xs:element name="listarTiposCuentaResponse" type="tns:listarTiposCuentaResponse" />
+  <xs:element name="modificarTipoCuenta" type="tns:modificarTipoCuenta" />
+  <xs:element name="modificarTipoCuentaResponse" type="tns:modificarTipoCuentaResponse" />
+  <xs:element name="obtenerTipoCuentaPorId" type="tns:obtenerTipoCuentaPorId" />
+  <xs:element name="obtenerTipoCuentaPorIdResponse" type="tns:obtenerTipoCuentaPorIdResponse" />
+  <xs:complexType name="eliminarTipoCuenta">
+    <xs:sequence>
+      <xs:element name="idTipoCuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTipoCuentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTiposCuenta">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTiposCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoCuenta">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idTipoCuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerTipoCuentaPorId">
+    <xs:sequence>
+      <xs:element name="idTipoCuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerTipoCuentaPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tipoCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTipoCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoCuenta" type="tns:tipoCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTipoCuentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTipoCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoCuenta" type="tns:tipoCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTipoCuentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
