@@ -85,7 +85,7 @@ void construirSolucion(vector<Objeto> objetos, vector<Caja> &solucion,
     sort(objetos.begin(), objetos.end(), comparaObjetos);
 
     while (!objetos.empty()) {
-        // Primero seleccionamos el objeto con GRASP ===
+        // Primero seleccionamos el objeto con GRASP
         int betaObj = objetos[0].peso;
         int tauObj = objetos[objetos.size()-1].peso;
         int rclObj = betaObj - ALFA * (betaObj - tauObj);
