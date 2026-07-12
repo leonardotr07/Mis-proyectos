@@ -85,7 +85,7 @@ void construirSolucion(vector<Objeto> objetos, vector<Caja> &solucion,
     sort(objetos.begin(), objetos.end(), comparaObjetos);
 
     while (!objetos.empty()) {
-        // === FASE 1: Seleccionar objeto con GRASP ===
+        // Primero seleccionamos el objeto con GRASP ===
         int betaObj = objetos[0].peso;
         int tauObj = objetos[objetos.size()-1].peso;
         int rclObj = betaObj - ALFA * (betaObj - tauObj);
@@ -94,7 +94,7 @@ void construirSolucion(vector<Objeto> objetos, vector<Caja> &solucion,
 
         Objeto objetoSeleccionado = objetos[objetoAEscoger];
 
-        // === FASE 2: Buscar mejor caja (Best Fit) ===
+        // Después buscamos la mejor caja
         int mejorCaja = -1;
         int menorDesperdicio = INT_MAX;
 
