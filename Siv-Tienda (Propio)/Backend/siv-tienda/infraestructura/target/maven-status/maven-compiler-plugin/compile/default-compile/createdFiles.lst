@@ -1,0 +1,7 @@
+com\tienda\infraestructura\configuracion\JpaConfig.class
+com\tienda\infraestructura\entidad\EntidadProducto.class
+com\tienda\infraestructura\adaptador\repositorio\RepositorioProductoJPAAdapter.class
+com\tienda\infraestructura\adaptador\repositorio\ProductoJpaRepository.class
+com\tienda\infraestructura\mapper\ProductoMapper.class
+com\tienda\infraestructura\mapper\ProductoMapperImpl.class
+com\tienda\infraestructura\adaptador\rest\ProductoController.class

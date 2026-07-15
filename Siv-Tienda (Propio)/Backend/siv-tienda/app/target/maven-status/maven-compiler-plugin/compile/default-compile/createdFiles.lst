@@ -1,0 +1,4 @@
+com\tienda\app\puerto\entrada\RegistrarProductoUseCase.class
+com\tienda\app\servicio\ServicioRegistrarProducto.class
+com\tienda\app\puerto\salida\RepositorioProducto.class
+com\tienda\app\comando\RegistrarProductoComando.class
