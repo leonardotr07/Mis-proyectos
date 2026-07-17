@@ -4,6 +4,7 @@
  */
 package com.tienda.infraestructura.entidad;
 
+import com.tienda.dominio.modelo.CategoriaProducto;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -36,17 +37,26 @@ public class EntidadProducto {
     
     @Column(name="stock_minimo", nullable=false)
     private Integer stockMinimo;
+    
+    //ENUM
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private CategoriaProducto categoria;
 
     //Constructor con parametros
-    public EntidadProducto(Long id, String nombre, String descripcion, BigDecimal precio, Integer stock, Integer stockMinimo) {
+    public EntidadProducto(Long id, String nombre, String descripcion, 
+            BigDecimal precio, Integer stock, Integer stockMinimo, CategoriaProducto categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         this.stockMinimo = stockMinimo;
+        this.categoria = categoria;
     }
 
+    public EntidadProducto() {
+    }
     
     //Getters y Setters
     public Long getId() {
@@ -96,6 +106,13 @@ public class EntidadProducto {
     public void setStockMinimo(Integer stockMinimo) {
         this.stockMinimo = stockMinimo;
     }
-    
+
+    public CategoriaProducto getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaProducto categoria) {
+        this.categoria = categoria;
+    }
     
 }

@@ -7,7 +7,9 @@ package com.tienda.app.servicio;
 import com.tienda.app.comando.RegistrarProductoComando;
 import com.tienda.app.puerto.entrada.RegistrarProductoUseCase;
 import com.tienda.app.puerto.salida.RepositorioProducto;
+import com.tienda.dominio.modelo.CategoriaProducto;
 import com.tienda.dominio.modelo.Producto;
+import com.tienda.dominio.servicio.ValidarCategoria;
 import com.tienda.dominio.valor.CantidadStock;
 import com.tienda.dominio.valor.Dinero;
 import org.springframework.stereotype.Service;
@@ -38,9 +40,13 @@ public class ServicioRegistrarProducto implements RegistrarProductoUseCase{
         CantidadStock stockIni=new CantidadStock(comando.stockInicial());
         CantidadStock stockMin=new CantidadStock(comando.stockMinimo());
         
+        if(!ValidarCategoria.esCoherente(comando.nombre(), comando.descripcion(), comando.categoria())){
+            throw new IllegalArgumentException("La categoria no coincide con el nombre o descripcion del producto.");
+        }
+        
         //Creamos el objeto
         Producto nuevoProducto=new Producto(comando.nombre(), comando.descripcion(),
-                precio, stockIni, stockMin);
+                precio, stockIni, stockMin, comando.categoria());
         //Lo guardamos por el puerto de salida
         return repositorioProducto.guardar(nuevoProducto);
     }

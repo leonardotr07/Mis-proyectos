@@ -9,7 +9,9 @@ import com.tienda.dominio.modelo.Producto;
 import com.tienda.infraestructura.adaptador.repositorio.ProductoJpaRepository;
 import com.tienda.infraestructura.entidad.EntidadProducto;
 import com.tienda.infraestructura.mapper.ProductoMapper;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,7 @@ public class RepositorioProductoJPAAdapter implements RepositorioProducto{
     }
     
     //Implemento las funciones de la clase RepositorioProducto en el proyecto de app
+    //Esta clase interactua con la BD
     @Override
     public Producto guardar(Producto producto) {
         //Convertimos la entidad de dominio a entidad BD
@@ -42,10 +45,23 @@ public class RepositorioProductoJPAAdapter implements RepositorioProducto{
         //Devolvemos el producto guardado como entidad de Dominio.
         return mapper.toDominio(guardado);
     }
-
+    
+    //Buscar Producto por Id
     @Override
     public Optional<Producto> buscarPorId(Long id) {
         return jpaRepository.findById(id).map(mapper::toDominio);
     }
     
+    //Listar Productos, la que interactua con la BD
+    @Override
+    public List<Producto> listarTodos() {
+        return jpaRepository.findAll().stream()
+                .map(mapper::toDominio)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void eliminarPorId(Long id) {
+        jpaRepository.deleteById(id);
+    }
 }

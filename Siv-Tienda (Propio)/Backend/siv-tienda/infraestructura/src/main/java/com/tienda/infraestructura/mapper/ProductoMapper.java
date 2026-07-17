@@ -26,6 +26,7 @@ public interface ProductoMapper {
     @Mapping(target = "stock", source = "stock", qualifiedByName = "stockFromInteger")
     @Mapping(target = "stockMinimo", source = "stockMinimo", qualifiedByName = "stockFromInteger")
     @Mapping(target = "id", source = "id")  // El id se pasa como Long
+    @Mapping(target = "categoria", source = "categoria")
     Producto toDominio(EntidadProducto entidad);
 
     
@@ -35,6 +36,7 @@ public interface ProductoMapper {
     @Mapping(target = "precio", source = "precio", qualifiedByName = "bigDecimalFromDinero")
     @Mapping(target = "stock", source = "stock", qualifiedByName = "integerFromStock")
     @Mapping(target = "stockMinimo", source = "stockMinimo", qualifiedByName = "integerFromStock")
+    @Mapping(target = "categoria", source = "categoria")
     EntidadProducto toEntity(Producto dominio);
 
     // Conversores 

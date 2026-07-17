@@ -2,13 +2,12 @@ package com.tienda.infraestructura.mapper;
 
 import com.tienda.dominio.modelo.Producto;
 import com.tienda.infraestructura.entidad.EntidadProducto;
-import java.math.BigDecimal;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-07-14T15:24:40-0500",
+    date = "2026-07-17T12:38:18-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 26.0.1 (Eclipse Adoptium)"
 )
 @Component
@@ -28,6 +27,7 @@ public class ProductoMapperImpl implements ProductoMapper {
         producto.setStock( stockFromInteger( entidad.getStock() ) );
         producto.setStockMinimo( stockFromInteger( entidad.getStockMinimo() ) );
         producto.setId( entidad.getId() );
+        producto.setCategoria( entidad.getCategoria() );
 
         return producto;
     }
@@ -38,21 +38,15 @@ public class ProductoMapperImpl implements ProductoMapper {
             return null;
         }
 
-        String descripcion = null;
-        Long id = null;
-        String nombre = null;
-        BigDecimal precio = null;
-        Integer stock = null;
-        Integer stockMinimo = null;
+        EntidadProducto entidadProducto = new EntidadProducto();
 
-        descripcion = dominio.getDescripcion();
-        id = dominio.getId();
-        nombre = dominio.getNombre();
-        precio = bigDecimalFromDinero( dominio.getPrecio() );
-        stock = integerFromStock( dominio.getStock() );
-        stockMinimo = integerFromStock( dominio.getStockMinimo() );
-
-        EntidadProducto entidadProducto = new EntidadProducto( id, nombre, descripcion, precio, stock, stockMinimo );
+        entidadProducto.setDescripcion( dominio.getDescripcion() );
+        entidadProducto.setId( dominio.getId() );
+        entidadProducto.setNombre( dominio.getNombre() );
+        entidadProducto.setPrecio( bigDecimalFromDinero( dominio.getPrecio() ) );
+        entidadProducto.setStock( integerFromStock( dominio.getStock() ) );
+        entidadProducto.setStockMinimo( integerFromStock( dominio.getStockMinimo() ) );
+        entidadProducto.setCategoria( dominio.getCategoria() );
 
         return entidadProducto;
     }

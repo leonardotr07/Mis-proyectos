@@ -5,6 +5,7 @@
 
 package com.tienda.app.comando;
 
+import com.tienda.dominio.modelo.CategoriaProducto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -32,6 +33,9 @@ public record RegistrarProductoComando (
 
     @NotNull(message = "El stock mínimo es obligatorio")
     @Positive(message = "El stock mínimo debe ser mayor a 0")
-    Integer stockMinimo)
+    Integer stockMinimo,
+
+    @NotNull(message = "La categoría es obligatoria")
+    CategoriaProducto categoria)
 {}
 

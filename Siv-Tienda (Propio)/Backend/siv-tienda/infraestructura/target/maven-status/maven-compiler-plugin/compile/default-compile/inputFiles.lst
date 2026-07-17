@@ -1,6 +1,7 @@
-D:\App Tienda\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\adaptador\repositorio\ProductoJpaRepository.java
-D:\App Tienda\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\adaptador\repositorio\RepositorioProductoJPAAdapter.java
-D:\App Tienda\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\adaptador\rest\ProductoController.java
-D:\App Tienda\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\configuracion\JpaConfig.java
-D:\App Tienda\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\entidad\EntidadProducto.java
-D:\App Tienda\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\mapper\ProductoMapper.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\adaptador\repositorio\ProductoJpaRepository.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\adaptador\repositorio\RepositorioProductoJPAAdapter.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\adaptador\rest\ProductoController.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\configuracion\JpaConfig.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\configuracion\ManejadorGlobalExcepciones.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\entidad\EntidadProducto.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\infraestructura\src\main\java\com\tienda\infraestructura\mapper\ProductoMapper.java

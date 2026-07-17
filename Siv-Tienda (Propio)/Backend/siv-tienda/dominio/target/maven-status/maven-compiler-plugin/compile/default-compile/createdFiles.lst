@@ -1,4 +1,6 @@
 com\tienda\dominio\modelo\Producto.class
 com\tienda\dominio\valor\Dinero.class
+com\tienda\dominio\modelo\CategoriaProducto.class
 com\tienda\dominio\valor\CantidadStock.class
 com\tienda\dominio\excepcion\StockInsuficienteException.class
+com\tienda\dominio\servicio\ValidarCategoria.class

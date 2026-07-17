@@ -19,28 +19,31 @@ public class Producto {
     private Dinero precio;
     private CantidadStock stock;
     private CantidadStock stockMinimo;
+    private CategoriaProducto categoria;
     
     public Producto() {}
 
     // Constructor para CREAR (sin ID)
     public Producto(String nombre, String descripcion, Dinero precio, 
-                    CantidadStock stock, CantidadStock stockMinimo) {
+                    CantidadStock stock, CantidadStock stockMinimo, CategoriaProducto categoria) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         this.stockMinimo = stockMinimo;
+        this.categoria=categoria;
     }
 
-    // Constructor para RECONSTRUIR (con ID)
+    // Constructor (con ID)
     public Producto(Long id, String nombre, String descripcion, Dinero precio,
-                    CantidadStock stock, CantidadStock stockMinimo) {
+                    CantidadStock stock, CantidadStock stockMinimo, CategoriaProducto categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         this.stockMinimo = stockMinimo;
+        this.categoria= categoria;
     }
 
     // Métodos de negocio 
@@ -65,6 +68,14 @@ public class Producto {
 
     // Getters y Setters (para que MapStruct pueda escribir)
 
+    public CategoriaProducto getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaProducto categoria) {
+        this.categoria = categoria;
+    }
+    
     public Long getId() {
         return id;
     }

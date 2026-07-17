@@ -1,4 +1,6 @@
-D:\App Tienda\siv-tienda\dominio\src\main\java\com\tienda\dominio\excepcion\StockInsuficienteException.java
-D:\App Tienda\siv-tienda\dominio\src\main\java\com\tienda\dominio\modelo\Producto.java
-D:\App Tienda\siv-tienda\dominio\src\main\java\com\tienda\dominio\valor\CantidadStock.java
-D:\App Tienda\siv-tienda\dominio\src\main\java\com\tienda\dominio\valor\Dinero.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\excepcion\StockInsuficienteException.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\modelo\CategoriaProducto.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\modelo\Producto.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\servicio\ValidarCategoria.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\valor\CantidadStock.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\valor\Dinero.java

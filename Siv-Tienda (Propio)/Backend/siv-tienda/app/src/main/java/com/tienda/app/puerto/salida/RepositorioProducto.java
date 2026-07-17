@@ -5,6 +5,7 @@
 package com.tienda.app.puerto.salida;
 
 import com.tienda.dominio.modelo.Producto;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -19,4 +20,8 @@ public interface RepositorioProducto {
     
     // Busca un producto por su ID. Devuelve Optional xq puede que no exista.
     Optional<Producto> buscarPorId(Long id);
+    
+    List<Producto> listarTodos();
+    
+    void eliminarPorId(Long id);
 }

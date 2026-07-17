@@ -1,5 +1,0 @@
-# Created at 2026-07-14T15:24:36.885
-Boot Manifest-JAR contains absolute paths in classpath 'D:\App Tienda\siv-tienda\app\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-
