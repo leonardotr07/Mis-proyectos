@@ -27,9 +27,9 @@ public record RegistrarProductoComando (
     @Positive(message = "El precio debe ser mayor a 0")
     Double precio,
 
-    @NotNull(message = "El stock inicial es obligatorio")
+    @NotNull(message = "El stock es obligatorio")
     @Positive(message = "El stock debe ser mayor a 0")
-    Integer stockInicial,
+    Integer stock,
 
     @NotNull(message = "El stock mínimo es obligatorio")
     @Positive(message = "El stock mínimo debe ser mayor a 0")

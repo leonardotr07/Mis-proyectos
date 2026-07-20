@@ -1,0 +1,42 @@
+@using SIV_Tienda.Services
+
+@if (Visible)
+{
+    <div class="modal-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:999;">
+        <div class="modal-content" style="background:white; padding:20px; border-radius:8px; min-width:400px; max-width:600px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+            <h3>@Titulo</h3>
+            <hr />
+            @if (Producto != null)
+            {
+                <div style="display:grid; grid-template-columns:120px 1fr; gap:8px;">
+                    <strong>ID:</strong> <span>@Producto.Id</span>
+                    <strong>Nombre:</strong> <span>@Producto.Nombre</span>
+                    <strong>Descripción:</strong> <span>@Producto.Descripcion</span>
+                    <strong>Categoría:</strong> <span>@Producto.Categoria</span>
+                    <strong>Precio:</strong> <span>S/ @Producto.Precio.Monto.ToString("N2")</span>
+                    <strong>Stock:</strong> <span>@Producto.Stock.Valor</span>
+                    <strong>Stock Mínimo:</strong> <span>@Producto.StockMinimo.Valor</span>
+                </div>
+            }
+            else
+            {
+                <p>No hay datos del producto.</p>
+            }
+            <div style="display:flex; justify-content:flex-end; margin-top:20px;">
+                <button class="btn btn-primary" @onclick="Cerrar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool Visible { get; set; }
+    [Parameter] public string Titulo { get; set; } = "Detalle del Producto";
+    [Parameter] public Producto? Producto { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+
+    private async Task Cerrar()
+    {
+        await OnClose.InvokeAsync();
+    }
+}

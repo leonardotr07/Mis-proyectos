@@ -26,11 +26,16 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- (Opcional pero recomendado) Para tener el servidor web embebido -->
-        <!-- Si infraestructura ya tiene spring-boot-starter-web, esta dependencia no es necesaria, pero la dejamos por claridad -->
+        <!-- Para tener el servidor web embebido -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--Dependencia para abrir una API para importar clases para el frontEnd-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
         </dependency>
     </dependencies>
 

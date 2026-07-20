@@ -1,0 +1,102 @@
+﻿@page "/" 
+@using SIV_Tienda.Services
+@inject ProductoClient ProductoClient
+
+@*Titulo de la página de productos*@
+<h1>Lista de Productos</h1>
+
+@*Botón con referencia a crear un nuevo producto*@
+<a href="/crear-producto" class="btn btn-success mb-3">+ Nuevo Producto</a>
+
+@*Listar productos*@
+@if (productos == null)
+{
+    <p>Cargando...</p>
+}
+else if (!productos.Any())
+{
+    <p>No hay productos registrados.</p>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in productos)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Categoria</td>
+                    <td>@p.Precio.Monto.ToString("C")</td>
+                    <td>@p.Stock.Valor</td>
+                    <td>
+                        <a href="/editar-producto/@p.Id" class="btn btn-sm btn-primary">Editar</a>
+                        <button class="btn btn-sm btn-danger" @onclick="() => PedirConfirmacion(p.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@* Componente de confirmación *@
+<ConfirmDialog Visible="@mostrarConfirmacion"
+               Mensaje="@mensajeConfirmacion"
+               OnConfirm="@ConfirmarEliminar"
+               OnCancel="@CancelarEliminar" />
+
+@code {
+    private ICollection<Producto>? productos;
+    private bool mostrarConfirmacion = false;
+    private string mensajeConfirmacion = "";
+    private long? productoAEliminar;
+
+    protected override async Task OnInitializedAsync()
+    {
+        productos = await ProductoClient.ListarProductosAsync();
+    }
+
+    private void PedirConfirmacion(long id)
+    {
+        var nombre = productos?.FirstOrDefault(p => p.Id == id)?.Nombre ?? "producto";
+        productoAEliminar = id;
+        mensajeConfirmacion = $"¿Eliminar el producto '{nombre}'?";
+        mostrarConfirmacion = true;
+    }
+
+    private void CancelarEliminar()
+    {
+        mostrarConfirmacion = false;
+        productoAEliminar = null;
+    }
+
+    private async Task ConfirmarEliminar()
+    {
+        if (productoAEliminar.HasValue)
+        {
+            try
+            {
+                await ProductoClient.EliminarProductoAsync(productoAEliminar.Value);
+                productos = await ProductoClient.ListarProductosAsync();
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al eliminar: {ex.Message}");
+            }
+        }
+        mostrarConfirmacion = false;
+        productoAEliminar = null;
+    }
+}

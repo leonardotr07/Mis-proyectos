@@ -17,7 +17,7 @@ import java.util.Map;
 public class ValidarCategoria {
     public static final Map<CategoriaProducto, List<String>> MAPA_PALABRAS=Map.of(
             CategoriaProducto.POLOS, Arrays.asList("polo", "camisa", "blusa", "t-shirt", "tshirt", "top"),
-            CategoriaProducto.JEANS, Arrays.asList("jeans", "pantalón", "vaquero", "denim", "levis"),
+            CategoriaProducto.JEANS, Arrays.asList("jeans", "pantalón", "vaquero", "denim", "levis", "pantalon", "jean"),
             CategoriaProducto.CASACAS, Arrays.asList("casaca", "chaqueta", "impermeable", "rompevientos", "chamarra"),
             CategoriaProducto.ZAPATILLAS, Arrays.asList("zapatilla", "tenis", "zapato", "deportiva", "calzado"),
             CategoriaProducto.ACCESORIOS, Arrays.asList("gorra", "bufanda", "guante", "cinturón", "accesorio"),

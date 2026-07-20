@@ -24,6 +24,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.tienda.app.puerto.entrada.ActualizarProductoUseCase;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  *
@@ -54,6 +58,11 @@ public class ProductoController {
     
     //EndPoint para RegistrarProducto
     @PostMapping //Métodos POST de la ruta /api/productos
+    @Operation(summary = "Registrar Producto")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "201", description = "Producto creado exitosamente"),
+        @ApiResponse(responseCode = "400", description = "Datos inválidos")
+    })
     public ResponseEntity<Producto> registrarProducto(@Valid @RequestBody RegistrarProductoComando comando){
         //Sobre @Valid y @RequestBody -> la petición http lo convierte a un RegistrarProductoComando y valid: valida
         //lo necesario sobre el comando (Not null o positive). De no ser así. Devuelve error 400 (Bad Request)
@@ -66,6 +75,11 @@ public class ProductoController {
     
     //ListarProductos
     @GetMapping
+    @Operation(summary = "Listar Productos")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Producto encontrado"),
+        @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+    })
     public ResponseEntity<List<Producto>> listarProductos() {
         List<Producto> productos = listarProductos.ejecutar();
         return ResponseEntity.ok(productos);
@@ -73,12 +87,19 @@ public class ProductoController {
     
     //ObtenerProducto
     @GetMapping("/{id}")
+    @Operation(summary = "Obtener producto por ID")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Producto encontrado"),
+        @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+    })
     public ResponseEntity<Producto> obtenerProductoPorId(@PathVariable Long id){
         return obtenerProducto.ejecutar(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
     
     //Actualizar o modificar producto
     @PutMapping("/{id}")
+    @Operation(summary = "Actualizar producto por ID")
+    @ApiResponse(responseCode = "200", description = "Producto actualizado")
     public ResponseEntity<Producto> actualizarProducto(
             @PathVariable Long id,
             @Valid @RequestBody ActualizarProductoComando comando) {
@@ -88,6 +109,12 @@ public class ProductoController {
     }
     
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(summary = "Eliminar producto por ID")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Producto encontrado"),
+        @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+    })
     public ResponseEntity<Void> eliminarProducto(@PathVariable Long id) {
         boolean eliminado = eliminarProducto.ejecutar(id);
         if (eliminado) {

@@ -15,9 +15,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductoJpaRepository extends JpaRepository<EntidadProducto, Long> {
     /*Generará automaticamente los métodos de:
-        -save() Registrar
-        -findById() EncontrarPorID
-        -findAll() Encontrar todos
-        -deleteById() Eliminar por ID
+        -guardar() 
+        -encontrarPorId() 
+        -listarTodos() 
+        -eliminarPorId() 
     */
 }

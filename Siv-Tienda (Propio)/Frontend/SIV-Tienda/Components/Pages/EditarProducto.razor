@@ -1,0 +1,177 @@
+@page "/editar-producto/{id:long}"
+@using SIV_Tienda.Services
+@using SIV_Tienda.Components;
+@inject ProductoClient ProductoClient
+@inject NavigationManager Navigation
+
+<h1>Editar Producto</h1>
+
+@if (cargando)
+{
+    <p>Cargando datos del producto...</p>
+}
+else if (producto == null)
+{
+    <div class="alert alert-danger">No se encontró el producto.</div>
+    <button class="btn btn-secondary" @onclick="Cancelar">Volver</button>
+}
+else
+{
+    <EditForm Model="@productoEdit" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary class="text-danger mb-3" />
+
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del Producto *</label>
+            <InputText id="nombre" class="form-control" @bind-Value="productoEdit.Nombre" />
+            <ValidationMessage For="@(() => productoEdit.Nombre)" />
+        </div>
+
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <InputText id="descripcion" class="form-control" @bind-Value="productoEdit.Descripcion" />
+            <ValidationMessage For="@(() => productoEdit.Descripcion)" />
+        </div>
+
+        <div class="mb-3">
+            <label for="categoria" class="form-label">Categoría *</label>
+            <InputSelect id="categoria" class="form-select" @bind-Value="productoEdit.Categoria">
+                <option value="">-- Seleccionar --</option>
+                @foreach (var cat in Enum.GetValues<ActualizarProductoComandoCategoria>())
+                {
+                    <option value="@cat">@cat</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => productoEdit.Categoria)" />
+        </div>
+
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio (S/) *</label>
+            <InputNumber id="precio" class="form-control" @bind-Value="productoEdit.Precio" step="0.01" />
+            <ValidationMessage For="@(() => productoEdit.Precio)" />
+        </div>
+
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock *</label>
+            <InputNumber id="stock" class="form-control" @bind-Value="productoEdit.Stock" step="1" />
+            <ValidationMessage For="@(() => productoEdit.Stock)" />
+        </div>
+
+        <div class="mb-3">
+            <label for="stockMinimo" class="form-label">Stock Mínimo *</label>
+            <InputNumber id="stockMinimo" class="form-control" @bind-Value="productoEdit.StockMinimo" step="1" />
+            <ValidationMessage For="@(() => productoEdit.StockMinimo)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" disabled="@enviando">
+            @(enviando ? "Guardando..." : "Guardar Cambios")
+        </button>
+        <button type="button" class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+    </EditForm>
+
+    @if (mensajeError != null)
+    {
+        <div class="alert alert-danger mt-3">@mensajeError</div>
+    }
+
+    @* Modal de detalle *@
+    <ProductoDetalleModal Visible="@mostrarModal" 
+                          Titulo="Producto Actualizado Exitosamente"
+                          Producto="@productoActualizado"
+                          OnClose="CerrarModal" />
+}
+
+@code {
+    [Parameter] public long Id { get; set; }
+
+    private ActualizarProductoComando productoEdit = new();
+    private Producto? producto;
+    private bool cargando = true;
+    private bool enviando = false;
+    private string? mensajeError;
+
+    private bool mostrarModal = false;
+    private Producto? productoActualizado;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            cargando = true;
+            producto = await ProductoClient.ObtenerProductoPorIdAsync(Id);
+
+            if (producto != null)
+            {
+                productoEdit.Nombre = producto.Nombre;
+                productoEdit.Descripcion = producto.Descripcion;
+                productoEdit.Categoria = (ActualizarProductoComandoCategoria)producto.Categoria;
+                productoEdit.Precio = producto.Precio.Monto;
+                productoEdit.Stock = producto.Stock.Valor;
+                productoEdit.StockMinimo = producto.StockMinimo.Valor;
+            }
+        }
+        catch (ApiException ex) when (ex.StatusCode == 404)
+        {
+            producto = null;
+            mensajeError = "El producto no existe.";
+        }
+        catch (Exception ex)
+        {
+            mensajeError = $"Error al cargar el producto: {ex.Message}";
+        }
+        finally
+        {
+            cargando = false;
+        }
+    }
+
+    private bool ValidarStock()
+    {
+        if (productoEdit.StockMinimo > productoEdit.Stock)
+        {
+            mensajeError = "El stock mínimo no puede ser mayor al stock actual.";
+            return false;
+        }
+        return true;
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        enviando = true;
+        mensajeError = null;
+
+        try
+        {
+            if (!ValidarStock())
+                return;
+
+            var resultado = await ProductoClient.ActualizarProductoAsync(Id, productoEdit);
+            productoActualizado = resultado;
+            mostrarModal = true;
+            StateHasChanged();
+        }
+        catch (ApiException ex)
+        {
+            mensajeError = $"Error al actualizar: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            mensajeError = $"Error de conexión: {ex.Message}";
+        }
+        finally
+        {
+            enviando = false;
+        }
+    }
+
+    private void CerrarModal()
+    {
+        mostrarModal = false;
+        Navigation.NavigateTo("/");
+    }
+
+    private void Cancelar()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

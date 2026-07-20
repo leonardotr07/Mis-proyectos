@@ -65,13 +65,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <!-- Jakarta Validation (ya viene en spring-boot-starter, pero lo pongo explícito) -->
         <dependency>
             <groupId>jakarta.validation</groupId>
@@ -83,6 +76,13 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
+        </dependency>
+        
+        <!--Dependencia para abrir una API para importar clases para el frontEnd-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
         </dependency>
     </dependencies>
 

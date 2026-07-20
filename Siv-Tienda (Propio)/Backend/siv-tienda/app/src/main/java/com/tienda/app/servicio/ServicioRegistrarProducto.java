@@ -37,7 +37,7 @@ public class ServicioRegistrarProducto implements RegistrarProductoUseCase{
         
         //Convertimos los datos de planos a Objetos del dominio
         Dinero precio=Dinero.of(comando.precio());
-        CantidadStock stockIni=new CantidadStock(comando.stockInicial());
+        CantidadStock stock=new CantidadStock(comando.stock());
         CantidadStock stockMin=new CantidadStock(comando.stockMinimo());
         
         if(!ValidarCategoria.esCoherente(comando.nombre(), comando.descripcion(), comando.categoria())){
@@ -46,7 +46,7 @@ public class ServicioRegistrarProducto implements RegistrarProductoUseCase{
         
         //Creamos el objeto
         Producto nuevoProducto=new Producto(comando.nombre(), comando.descripcion(),
-                precio, stockIni, stockMin, comando.categoria());
+                precio, stock, stockMin, comando.categoria());
         //Lo guardamos por el puerto de salida
         return repositorioProducto.guardar(nuevoProducto);
     }
