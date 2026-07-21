@@ -1,0 +1,60 @@
+@using SIV_Tienda.Services
+
+@if (Visible)
+{
+    @*Diseño del pop up*@
+    <div class="modal-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:999;">
+        <div class="modal-content" style="background:white; padding:20px; border-radius:8px; min-width:400px; max-width:600px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+            <h3 style="color:#d9534f;">Confirmar Eliminación</h3>
+            <hr />
+            <p>¿Estás seguro de eliminar el siguiente producto? Esta acción no se puede deshacer.</p>
+            
+            @*Detalles del producto*@
+            @if (Producto != null)
+            {
+                <div style="display:grid; grid-template-columns:120px 1fr; gap:8px; margin:15px 0;">
+                    <strong>ID:</strong> <span>@Producto.Id</span>
+                    <strong>Nombre:</strong> <span>@Producto.Nombre</span>
+                    <strong>Descripción:</strong> <span>@Producto.Descripcion</span>
+                    <strong>Categoría:</strong> <span>@Producto.Categoria</span>
+                    <strong>Precio:</strong> <span>S/ @Producto.Precio.Monto.ToString("N2")</span>
+                    <strong>Stock:</strong> <span>@Producto.Stock.Valor</span>
+                    <strong>Stock Mínimo:</strong> <span>@Producto.StockMinimo.Valor</span>
+                </div>
+            }
+            else
+            {
+                <p>No hay datos del producto.</p>
+            }
+            @*Botones de acción, Cancelar o Eliminar el Producto*@
+            <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
+                <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                <button class="btn btn-danger" @onclick="Confirmar">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    //Modal Visible o no
+    [Parameter] public bool Visible { get; set; }
+
+    //Clase Producto
+    [Parameter] public Producto? Producto { get; set; }
+
+    //Eventos de cancelación o confirmación
+    [Parameter] public EventCallback OnConfirm { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
+
+    private async Task Confirmar()
+    {
+        //Maneja la ejecución del eliminarProducto
+        await OnConfirm.InvokeAsync();
+    }
+
+    private async Task Cancelar()
+    {
+        //Se cierra el modal... sin eliminar
+        await OnCancel.InvokeAsync();
+    }
+}

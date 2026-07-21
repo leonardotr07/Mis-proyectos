@@ -63,4 +63,11 @@ public class RepositorioProductoJPAAdapter implements RepositorioProducto{
     public void eliminarPorId(Long id) {
         jpaRepository.deleteById(id);
     }
+    
+    @Override
+    public List<Producto> listarCriticos(){
+        return jpaRepository.findAll().stream().map(mapper::toDominio)
+                .filter(p -> p.getStock().valor() < p.getStockMinimo().valor()).collect(Collectors.toList());
+    }
+    
 }

@@ -2,12 +2,14 @@ com\tienda\app\servicio\ServicioObtenerProductoPorId.class
 com\tienda\app\comando\ActualizarProductoComando.class
 com\tienda\app\puerto\entrada\RegistrarProductoUseCase.class
 com\tienda\app\servicio\ServicioRegistrarProducto.class
+com\tienda\app\puerto\entrada\ObtenerProductosCriticosUseCase.class
 com\tienda\app\puerto\entrada\ListarProductosUseCase.class
 com\tienda\app\servicio\ServicioEliminarProducto.class
 com\tienda\app\puerto\entrada\ObtenerProductoIdUseCase.class
 com\tienda\app\servicio\ServicioActualizarProductos.class
 com\tienda\app\puerto\entrada\EliminarProductoUseCase.class
 com\tienda\app\servicio\ServicioListarProductos.class
+com\tienda\app\servicio\ServicioObtenerProductosCriticos.class
 com\tienda\app\comando\RegistrarProductoComando.class
 com\tienda\app\puerto\salida\RepositorioProducto.class
 com\tienda\app\puerto\entrada\ActualizarProductoUseCase.class

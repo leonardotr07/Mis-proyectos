@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.tienda.app.puerto.entrada.ActualizarProductoUseCase;
+import com.tienda.app.puerto.entrada.ObtenerProductosCriticosUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -44,16 +45,19 @@ public class ProductoController {
     private final ObtenerProductoIdUseCase obtenerProducto;
     private final ActualizarProductoUseCase actualizarProducto;
     private final EliminarProductoUseCase eliminarProducto;
+    private final ObtenerProductosCriticosUseCase obtenerProductosCriticos;
     
     //Constructor
     public ProductoController(RegistrarProductoUseCase registrarProducto,
             ListarProductosUseCase listarProductos, ObtenerProductoIdUseCase obtenerProducto,
-            ActualizarProductoUseCase actualizarProducto, EliminarProductoUseCase eliminarProducto) {
+            ActualizarProductoUseCase actualizarProducto, EliminarProductoUseCase eliminarProducto,
+            ObtenerProductosCriticosUseCase obtenerProductosCriticos) {
         this.registrarProducto=registrarProducto;
         this.listarProductos=listarProductos;
         this.obtenerProducto=obtenerProducto;
         this.actualizarProducto=actualizarProducto;
         this.eliminarProducto=eliminarProducto;
+        this.obtenerProductosCriticos=obtenerProductosCriticos;
     }
     
     //EndPoint para RegistrarProducto
@@ -122,5 +126,17 @@ public class ProductoController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    
+    
+    @GetMapping("/criticos")
+    @Operation(summary = "Obtener productos con Stock Crítico")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Productos encontrados"),
+        @ApiResponse(responseCode = "404", description = "Productos no encontrados")
+    })
+    public ResponseEntity<List<Producto>> obtenerProductosCriticos(){
+        //Donde Stock Minimo > Stock Actual
+        return ResponseEntity.ok(obtenerProductosCriticos.ejecutar());
     }
 }

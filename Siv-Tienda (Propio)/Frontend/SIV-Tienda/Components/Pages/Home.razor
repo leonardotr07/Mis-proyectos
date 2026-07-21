@@ -1,12 +1,23 @@
 ﻿@page "/" 
 @using SIV_Tienda.Services
+@using SIV_Tienda.Components
 @inject ProductoClient ProductoClient
 
 @*Titulo de la página de productos*@
 <h1>Lista de Productos</h1>
 
+@* Alerta de productos con stock crítico *@
+@if (productosCriticos != null && productosCriticos.Any())
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>¡Atención!</strong> Hay <span class="badge bg-danger">@productosCriticos.Count</span> productos con stock crítico.
+        <a href="/productos-criticos" class="alert-link">Ver todos</a>
+    </div>
+}
+
 @*Botón con referencia a crear un nuevo producto*@
 <a href="/crear-producto" class="btn btn-success mb-3">+ Nuevo Producto</a>
+
 
 @*Listar productos*@
 @if (productos == null)
@@ -41,7 +52,7 @@ else
                     <td>@p.Stock.Valor</td>
                     <td>
                         <a href="/editar-producto/@p.Id" class="btn btn-sm btn-primary">Editar</a>
-                        <button class="btn btn-sm btn-danger" @onclick="() => PedirConfirmacion(p.Id)">Eliminar</button>
+                        <button type="button" class="btn btn-sm btn-danger" @onclick="() => PedirConfirmacion(p)">Eliminar</button>
                     </td>
                 </tr>
             }
@@ -49,44 +60,51 @@ else
     </table>
 }
 
-@* Componente de confirmación *@
-<ConfirmDialog Visible="@mostrarConfirmacion"
-               Mensaje="@mensajeConfirmacion"
-               OnConfirm="@ConfirmarEliminar"
-               OnCancel="@CancelarEliminar" />
+
+<ConfirmarEliminarModal Visible="@mostrarModalEliminar"
+                        Producto="@productoAEliminar"
+                        OnConfirm="ConfirmarEliminar"
+                        OnCancel="CancelarEliminar" />
 
 @code {
     private ICollection<Producto>? productos;
-    private bool mostrarConfirmacion = false;
-    private string mensajeConfirmacion = "";
-    private long? productoAEliminar;
+    private bool mostrarModalEliminar=false;
+
+    private Producto? productoAEliminar;
+     private ICollection<Producto>? productosCriticos;
 
     protected override async Task OnInitializedAsync()
     {
-        productos = await ProductoClient.ListarProductosAsync();
+        await CargarDatos();
     }
 
-    private void PedirConfirmacion(long id)
+    private async Task CargarDatos()
     {
-        var nombre = productos?.FirstOrDefault(p => p.Id == id)?.Nombre ?? "producto";
-        productoAEliminar = id;
-        mensajeConfirmacion = $"¿Eliminar el producto '{nombre}'?";
-        mostrarConfirmacion = true;
+        productos = await ProductoClient.ListarProductosAsync();
+        productosCriticos = await ProductoClient.ObtenerProductosCriticosAsync();
+    }
+
+    private void PedirConfirmacion(Producto datProducto)
+    {
+        var nombre = productos?.FirstOrDefault(p => p.Id == datProducto.Id)?.Nombre ?? "producto";
+        productoAEliminar = datProducto;
+        mostrarModalEliminar = true;
+        StateHasChanged();
     }
 
     private void CancelarEliminar()
     {
-        mostrarConfirmacion = false;
+        mostrarModalEliminar = false;
         productoAEliminar = null;
     }
 
     private async Task ConfirmarEliminar()
     {
-        if (productoAEliminar.HasValue)
+        if (productoAEliminar!=null)
         {
             try
             {
-                await ProductoClient.EliminarProductoAsync(productoAEliminar.Value);
+                await ProductoClient.EliminarProductoAsync(productoAEliminar.Id);
                 productos = await ProductoClient.ListarProductosAsync();
                 StateHasChanged();
             }
@@ -96,7 +114,7 @@ else
                 Console.WriteLine($"Error al eliminar: {ex.Message}");
             }
         }
-        mostrarConfirmacion = false;
+        mostrarModalEliminar = false;
         productoAEliminar = null;
     }
 }
