@@ -1,11 +1,3 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-</p>
-
 <h1 align="center">Mi Portafolio de Ingeniería Informática</h1>
 <h3 align="center">Sobre algoritmos de bajo nivel al Business Intelligence y el trabajo colaborativo</h3>
 
@@ -25,9 +17,9 @@ Este repositorio centraliza mis tres líneas de trabajo principales, demostrando
 
 ---
 
-## 📂 Navegación Principal (Mis 3 Grandes Bloques)
+## Navegación Principal del repositorio
 
-### 1️⃣ Programas Independientes (C / C++) - *Fundamentos Sólidos*
+### Programas Independientes (C / C++) - *Fundamentos Sólidos*
 
 > **Carpeta:** [`/independent-programs`](./independent-programs)
 
@@ -42,7 +34,7 @@ Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles q
 
 ---
 
-### 2️⃣ Proyecto Propio: SIV-Tienda (Java + C# + Power BI) - *Visión Empresarial*
+### Proyecto Propio: SIV-Tienda (Java + C# + Power BI) - *Visión Empresarial*
 
 > **Carpeta:** [`/siv-tienda`](./siv-tienda)
 
@@ -57,7 +49,7 @@ Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles q
 
 ---
 
-### 3️⃣ Proyecto Grupal: WearDrop - *Trabajo en Equipo y Metodologías Ágiles*
+### Proyecto Grupal: WearDrop - *Trabajo en Equipo y Metodologías Ágiles*
 
 > **Carpeta:** [`/wear-drop`](./wear-drop)
 
@@ -75,7 +67,7 @@ Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles q
 
 ---
 
-## 🧰 Habilidades Técnicas Globales
+## Habilidades Técnicas Globales
 
 | Categoría | Tecnologías / Herramientas |
 | :--- | :--- |
@@ -88,10 +80,10 @@ Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles q
 
 ---
 
-## 🎯 ¿Qué estoy buscando?
+##  ¿Qué estoy buscando?
 
 Estoy en la búsqueda activa de mi **primera experiencia profesional** en el área de desarrollo de software. Me interesan particularmente los roles donde pueda aportar mi visión tanto a nivel de **arquitectura de sistemas** como en la **optimización de rendimiento**, sin dejar de lado el análisis de datos para la toma de decisiones.
 
-📬 **Contáctame:**
+**Contáctame:**
 - **LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/leonardo-julio-tueros-rodriguez-a845b7342/).
 - **Correo:** leonardotr07@gmail.com
