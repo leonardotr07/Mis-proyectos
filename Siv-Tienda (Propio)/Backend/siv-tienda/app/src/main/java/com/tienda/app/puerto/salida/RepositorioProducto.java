@@ -24,4 +24,6 @@ public interface RepositorioProducto {
     List<Producto> listarTodos();
     
     void eliminarPorId(Long id);
+    
+    List<Producto> listarCriticos();
 }

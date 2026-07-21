@@ -4,10 +4,12 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\ti
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\EliminarProductoUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\ListarProductosUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\ObtenerProductoIdUseCase.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\ObtenerProductosCriticosUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\RegistrarProductoUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\salida\RepositorioProducto.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\ServicioActualizarProductos.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\ServicioEliminarProducto.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\ServicioListarProductos.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\ServicioObtenerProductoPorId.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\ServicioObtenerProductosCriticos.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\ServicioRegistrarProducto.java

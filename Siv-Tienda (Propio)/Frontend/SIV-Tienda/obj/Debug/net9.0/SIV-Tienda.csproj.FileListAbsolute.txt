@@ -1,3 +1,11 @@
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.AssemblyReference.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfoInputs.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfo.cs
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.CoreCompileInputs.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.MvcApplicationPartsAssemblyInfo.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.sourcelink.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\appsettings.Development.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\appsettings.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Tienda.staticwebassets.runtime.json
@@ -8,14 +16,6 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Ti
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Tienda.dll
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Tienda.pdb
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\Newtonsoft.Json.dll
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.AssemblyReference.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rpswa.dswa.cache.json
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfoInputs.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfo.cs
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.CoreCompileInputs.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.MvcApplicationPartsAssemblyInfo.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.sourcelink.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rjimswa.dswa.cache.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
