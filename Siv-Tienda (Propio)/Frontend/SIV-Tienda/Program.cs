@@ -10,13 +10,12 @@ builder.Services.AddRazorComponents()
 //Registramos el HttpClient
 builder.Services.AddScoped(sp => new HttpClient());
 
-//Registro el cliente generado.
-builder.Services.AddScoped<ProductoClient>(sp =>
+//Registro de clientes generados.
+builder.Services.AddScoped<ApiClient>(sp =>
 {
     var httpClient = sp.GetRequiredService<HttpClient>();
-    var client = new ProductoClient(httpClient);
-    //Por ahora sera localhost
-    client.BaseUrl = "http://localhost:8090"; 
+    var client = new ApiClient(httpClient);
+    client.BaseUrl = "http://localhost:8090"; // Ajusta el puerto si es necesario
     return client;
 });
 

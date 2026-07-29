@@ -4,13 +4,13 @@
  */
 package com.tienda.infraestructura.adaptador.rest;
 
-import com.tienda.app.comando.ActualizarProductoComando;
-import com.tienda.app.comando.RegistrarProductoComando;
-import com.tienda.app.puerto.entrada.EliminarProductoUseCase;
-import com.tienda.app.puerto.entrada.ListarProductosUseCase;
-import com.tienda.app.puerto.entrada.ObtenerProductoIdUseCase;
-import com.tienda.app.puerto.entrada.RegistrarProductoUseCase;
-import com.tienda.dominio.modelo.Producto;
+import com.tienda.app.comando.producto.ActualizarProductoComando;
+import com.tienda.app.comando.producto.RegistrarProductoComando;
+import com.tienda.app.puerto.entrada.productos.EliminarProductoUseCase;
+import com.tienda.app.puerto.entrada.productos.ListarProductosUseCase;
+import com.tienda.app.puerto.entrada.productos.ObtenerProductoIdUseCase;
+import com.tienda.app.puerto.entrada.productos.RegistrarProductoUseCase;
+import com.tienda.dominio.modelo.mercaderia.Producto;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.tienda.app.puerto.entrada.ActualizarProductoUseCase;
-import com.tienda.app.puerto.entrada.ObtenerProductosCriticosUseCase;
+import com.tienda.app.puerto.entrada.productos.ActualizarProductoUseCase;
+import com.tienda.app.puerto.entrada.productos.ObtenerProductosCriticosUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -40,7 +40,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 //Esta clase sirve como punto de entrada para peticiones HTTP
 public class ProductoController {
-    private final RegistrarProductoUseCase registrarProducto; //Puerto de Entrada
+    private final RegistrarProductoUseCase registrarProducto; //Puertos de Entrada
     private final ListarProductosUseCase listarProductos;
     private final ObtenerProductoIdUseCase obtenerProducto;
     private final ActualizarProductoUseCase actualizarProducto;

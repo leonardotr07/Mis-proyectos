@@ -1,6 +1,6 @@
 @page "/productos-criticos"
 @using SIV_Tienda.Services
-@inject ProductoClient ProductoClient
+@inject ApiClient ApiClient
 @inject NavigationManager Navigation
 
 <h1>Productos con Stock Crítico</h1>
@@ -49,6 +49,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        productos = await ProductoClient.ObtenerProductosCriticosAsync();
+        productos = await ApiClient.ObtenerProductosCriticosAsync();
     }
 }

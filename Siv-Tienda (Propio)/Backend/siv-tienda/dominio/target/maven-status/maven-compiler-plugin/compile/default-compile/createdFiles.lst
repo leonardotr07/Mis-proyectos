@@ -1,6 +1,11 @@
-com\tienda\dominio\modelo\Producto.class
+com\tienda\dominio\modelo\mercaderia\CategoriaProducto.class
 com\tienda\dominio\valor\Dinero.class
-com\tienda\dominio\modelo\CategoriaProducto.class
 com\tienda\dominio\valor\CantidadStock.class
 com\tienda\dominio\excepcion\StockInsuficienteException.class
+com\tienda\dominio\valor\EstadoCompra.class
+com\tienda\dominio\excepcion\CompraNoEncontradaException.class
+com\tienda\dominio\modelo\mercaderia\Producto.class
+com\tienda\dominio\modelo\provider\Proveedor.class
 com\tienda\dominio\servicio\ValidarCategoria.class
+com\tienda\dominio\modelo\purchase\Compra.class
+com\tienda\dominio\modelo\purchase\LineaCompra.class

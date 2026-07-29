@@ -4,7 +4,7 @@
  */
 package com.tienda.app.puerto.salida;
 
-import com.tienda.dominio.modelo.Producto;
+import com.tienda.dominio.modelo.mercaderia.Producto;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,4 +26,7 @@ public interface RepositorioProducto {
     void eliminarPorId(Long id);
     
     List<Producto> listarCriticos();
+    
+    void actualizarStock(Long productoId, int cantidad);
+    
 }

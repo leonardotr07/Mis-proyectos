@@ -1,7 +1,7 @@
 ﻿@page "/" 
 @using SIV_Tienda.Services
 @using SIV_Tienda.Components
-@inject ProductoClient ProductoClient
+@inject ApiClient ApiClient
 
 @*Titulo de la página de productos*@
 <h1>Lista de Productos</h1>
@@ -80,8 +80,8 @@ else
 
     private async Task CargarDatos()
     {
-        productos = await ProductoClient.ListarProductosAsync();
-        productosCriticos = await ProductoClient.ObtenerProductosCriticosAsync();
+        productos = await ApiClient.ListarProductosAsync();
+        productosCriticos = await ApiClient.ObtenerProductosCriticosAsync();
     }
 
     private void PedirConfirmacion(Producto datProducto)
@@ -104,8 +104,8 @@ else
         {
             try
             {
-                await ProductoClient.EliminarProductoAsync(productoAEliminar.Id);
-                productos = await ProductoClient.ListarProductosAsync();
+                await ApiClient.EliminarProductoAsync(productoAEliminar.Id);
+                productos = await ApiClient.ListarProductosAsync();
                 StateHasChanged();
             }
             catch (Exception ex)
