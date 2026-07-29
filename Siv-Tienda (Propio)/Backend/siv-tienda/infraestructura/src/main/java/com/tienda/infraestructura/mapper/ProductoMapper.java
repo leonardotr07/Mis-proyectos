@@ -2,10 +2,10 @@ package com.tienda.infraestructura.mapper;
 
 
 
-import com.tienda.dominio.modelo.Producto;
+import com.tienda.dominio.modelo.mercaderia.Producto;
 import com.tienda.dominio.valor.CantidadStock;
 import com.tienda.dominio.valor.Dinero;
-import com.tienda.infraestructura.entidad.EntidadProducto;
+import com.tienda.infraestructura.entidad.producto.EntidadProducto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

@@ -189,6 +189,19 @@ main[b-59grfexrkl] {
     display: block;
 }
 
+.nav-link[b-h3hctab34y] {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-link .bi[b-h3hctab34y] {
+    display: inline-block;
+    font-size: 1.1rem;      
+    line-height: 1.5;          
+    margin-right: 0.65rem;   
+    vertical-align: middle;
+}
 @media (min-width: 641px) {
     .navbar-toggler[b-h3hctab34y] {
         display: none;

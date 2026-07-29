@@ -1,0 +1,185 @@
+@page "/compras"
+@using SIV_Tienda.Services
+@inject ApiClient ApiClient
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+
+<h1> Historial de Compras </h1>
+
+<a href="/registrar-compra" class="btn btn-success mb-3">+ Nueva Compra</a>
+
+@if (!string.IsNullOrEmpty(mensaje))
+{
+    <div class="alert @claseMensaje alert-dismissible fade show" role="alert">
+        @mensaje
+        <button type="button" class="btn-close" @onclick="() => mensaje = null"></button>
+    </div>
+}
+
+@if (compras == null)
+{
+    <p>Cargando...</p>
+}
+else if (!compras.Any())
+{
+    <div class="alert alert-info">No hay compras registradas.</div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Proveedor</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in compras)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Proveedor?.Nombre</td>
+                    <td>@c.FechaCompra.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@c.Total?.Monto.ToString("C")</td>
+                    <td>
+                        <span class="badge @ObtenerClaseEstado(c.Estado)">
+                            @c.Estado
+                        </span>
+                    </td>
+                    <td>
+                        <a href="/compras/@c.Id" class="btn btn-sm btn-info" style="color: #ffffff;">Ver</a>
+                        @* >>> boton Anular, solo visible si el estado lo permite
+                             (misma regla que valida el dominio: no se anula RECIBIDA ni COMPLETADA) *@
+                        @if (c.Estado != CompraEstado.ANULADA
+                            && c.Estado != CompraEstado.RECIBIDA
+                            && c.Estado != CompraEstado.COMPLETADA)
+                        {
+                            <button type="button" class="btn btn-sm btn-danger"
+                                    disabled="@procesando"
+                                    @onclick="() => AnularCompra(c.Id)">
+                                Anular
+                            </button>
+                        }
+
+                        @* Boton Pagar, solo visible si la compra no esta anulada ni ya pagada *@
+                        @if (c.Estado != CompraEstado.ANULADA
+                            && c.Estado != CompraEstado.COMPLETADA)
+                        {
+                            <button type="button" class="btn btn-sm btn-success"
+                                    disabled="@procesando"
+                                    @onclick="() => PagarCompra(c.Id)">
+                                Pagar
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private ICollection<Compra>? compras;
+
+    private string? mensaje;
+    private string claseMensaje = "alert-info";
+    private bool procesando = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        compras = await ApiClient.ListarComprasAsync();
+    }
+    private async Task CargarCompras()
+    {
+        compras = await ApiClient.ListarComprasAsync();
+    }
+    private async Task AnularCompra(long id)
+    {
+        // Se pide confirmacion al usuario mediante el dialogo nativo del navegador
+        bool confirmado = await JSRuntime.InvokeAsync<bool>("confirm", "¿Confirma anular esta compra?");
+        if (!confirmado)
+        {
+            return;
+        }
+
+        procesando = true; // Bloquea los botones mientras se procesa la peticion
+        try
+        {
+            // Llama al endpoint PUT /api/compras/{id}/anular
+            await ApiClient.AnularCompraAsync(id);
+            mensaje = "Compra anulada correctamente.";
+            claseMensaje = "alert-success";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 404)
+        {
+            // La compra no existe (fue eliminada o el id es invalido)
+            mensaje = "No se encontro la compra indicada.";
+            claseMensaje = "alert-danger";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 409)
+        {
+            // La compra ya esta en un estado que no permite anulacion
+            mensaje = "No se puede anular: " + ex.Response;
+            claseMensaje = "alert-warning";
+        }
+        finally
+        {
+            procesando = false;
+            // Se vuelve a cargar la lista para reflejar el nuevo estado
+            await CargarCompras();
+        }
+    }
+
+    private async Task PagarCompra(long id)
+    {
+        bool confirmado = await JSRuntime.InvokeAsync<bool>("confirm", "¿Confirma pagar esta compra al proveedor?");
+        if (!confirmado)
+        {
+            return;
+        }
+
+        procesando = true;
+        try
+        {
+            // Llama al endpoint PUT /api/compras/{id}/pagar
+            await ApiClient.PagarCompraAsync(id);
+            mensaje = "Compra pagada correctamente.";
+            claseMensaje = "alert-success";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 404)
+        {
+            mensaje = "No se encontro la compra indicada.";
+            claseMensaje = "alert-danger";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 409)
+        {
+            // La compra esta anulada y no puede marcarse como pagada
+            mensaje = "No se puede pagar: " + ex.Response;
+            claseMensaje = "alert-warning";
+        }
+        finally
+        {
+            procesando = false;
+            await CargarCompras();
+        }
+    }
+    private string ObtenerClaseEstado(CompraEstado estado)
+    {
+        @*Esto es muy dificil que vaya a cambiar.
+         Por ende es por eso que se
+        coloca de manera "hardcodeada"*@
+        return estado switch
+        {
+            CompraEstado.PENDIENTE => "bg-warning text-dark",
+            CompraEstado.RECIBIDA => "bg-primary",
+            CompraEstado.COMPLETADA => "bg-success",
+            CompraEstado.ANULADA => "bg-danger",
+            _ => "bg-secondary"
+        };
+    }
+}

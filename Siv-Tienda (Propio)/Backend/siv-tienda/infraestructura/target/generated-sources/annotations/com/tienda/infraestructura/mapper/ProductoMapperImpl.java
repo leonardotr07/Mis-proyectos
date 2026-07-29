@@ -1,13 +1,13 @@
 package com.tienda.infraestructura.mapper;
 
-import com.tienda.dominio.modelo.Producto;
-import com.tienda.infraestructura.entidad.EntidadProducto;
+import com.tienda.dominio.modelo.mercaderia.Producto;
+import com.tienda.infraestructura.entidad.producto.EntidadProducto;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-07-21T12:34:57-0500",
+    date = "2026-07-29T12:52:22-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 26.0.1 (Eclipse Adoptium)"
 )
 @Component

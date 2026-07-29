@@ -4,7 +4,7 @@
  */
 package com.tienda.dominio.servicio;
 
-import com.tienda.dominio.modelo.CategoriaProducto;
+import com.tienda.dominio.modelo.mercaderia.CategoriaProducto;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

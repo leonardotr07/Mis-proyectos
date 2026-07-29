@@ -1,6 +1,6 @@
 @page "/crear-producto"
 @using SIV_Tienda.Services
-@inject ProductoClient ProductoClient
+@inject ApiClient ApiClient
 @inject NavigationManager Navigation
 
 <h1>Registrar Nuevo Producto</h1>
@@ -96,7 +96,7 @@
             if (!ValidarStock())
                 return;
 
-            var resultado = await ProductoClient.RegistrarProductoAsync(nuevoProducto);
+            var resultado = await ApiClient.RegistrarProductoAsync(nuevoProducto);
             productoCreado = resultado;
             mostrarModal = true;
             StateHasChanged();

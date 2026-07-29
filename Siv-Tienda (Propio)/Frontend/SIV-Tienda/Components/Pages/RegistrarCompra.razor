@@ -1,0 +1,160 @@
+@page "/registrar-compra"
+@using SIV_Tienda.Services
+@inject ApiClient ApiClient
+@inject NavigationManager Navigation
+
+<h1>Registrar Nueva Compra</h1>
+
+@if (mensajeError != null) { <div class="alert alert-danger">@mensajeError</div> }
+@if (mensajeExito != null) { <div class="alert alert-success">@mensajeExito</div> }
+
+<EditForm Model="@nuevaCompra" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary class="text-danger mb-3" />
+
+    <div class="mb-3">
+        <label class="form-label">Proveedor *</label>
+        <InputSelect class="form-select" @bind-Value="nuevaCompra.ProveedorId">
+            <option value="">-- Seleccionar --</option>
+            @foreach (var prov in proveedores) { <option value="@prov.Id">@prov.Nombre</option> }
+        </InputSelect>
+        <ValidationMessage For="@(() => nuevaCompra.ProveedorId)" />
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header d-flex justify-content-between">
+            <strong>Productos</strong>
+            <button type="button" class="btn btn-sm btn-primary" @onclick="AgregarLinea">+ Agregar</button>
+        </div>
+        <div class="card-body">
+            @if (lineas.Count == 0)
+            {
+                <p class="text-muted">Agrega al menos un producto.</p>
+            }
+            else
+            {
+                @for (int i = 0; i < lineas.Count; i++)
+                {
+                    var index = i; // captura correcta para el lambda de eliminar
+                    var linea = lineas[index];
+                    <div class="row g-2 align-items-end mb-2 p-2 border rounded">
+                        <div class="col-md-4">
+                            <label>Producto</label>
+                            <InputSelect class="form-select" @bind-Value="linea.ProductoId">
+                                <option value="">-- Seleccionar --</option>
+                                @foreach (var prod in productos) { <option value="@prod.Id">@prod.Nombre</option> }
+                            </InputSelect>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Cantidad</label>
+                            <InputNumber class="form-control" step="1" min="1" @bind-Value="linea.Cantidad" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Precio</label>
+                            <InputNumber class="form-control" step="0.01" min="0.01" @bind-Value="linea.PrecioUnitario" />
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-sm mt-3" @onclick="() => EliminarLinea(index)">🗑️</button>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" disabled="@enviando">@(enviando ? "Registrando..." : "Registrar Compra")</button>
+    <button type="button" class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+</EditForm>
+
+@code {
+    private RegistrarCompraComando nuevaCompra = new();
+
+    // Lista local en la que trabajamos (List<T> soporta indexación y RemoveAt)
+    private List<LineaCompraRequest> lineas = new();
+
+    private List<Proveedor> proveedores = new();
+    private List<Producto> productos = new();
+
+    private bool enviando = false;
+    private string? mensajeError;
+    private string? mensajeExito;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            proveedores = (await ApiClient.ListarProveedoresAsync()).ToList();
+            productos = (await ApiClient.ListarProductosAsync()).ToList();
+
+            lineas.Add(new LineaCompraRequest());
+
+            // Misma referencia: al modificar "lineas", nuevaCompra.Lineas queda sincronizada
+            nuevaCompra.Lineas = lineas;
+        }
+        catch (Exception ex)
+        {
+            mensajeError = $"Error al cargar datos: {ex.Message}";
+        }
+    }
+
+    private void AgregarLinea()
+    {
+        lineas.Add(new LineaCompraRequest());
+        // No hace falta reasignar nuevaCompra.Lineas, ya apunta a la misma lista
+    }
+
+    private void EliminarLinea(int index)
+    {
+        if (lineas.Count > 1)
+            lineas.RemoveAt(index);
+        else
+            mensajeError = "Debe haber al menos una línea.";
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        enviando = true;
+        mensajeError = null;
+        mensajeExito = null;
+
+        try
+        {
+            if (nuevaCompra.ProveedorId == 0) { mensajeError = "Selecciona un proveedor."; return; }
+            if (lineas.Count == 0) { mensajeError = "Agrega al menos un producto."; return; }
+
+            foreach (var l in lineas)
+            {
+                if (l.ProductoId == 0) { mensajeError = "Selecciona un producto en cada línea."; return; }
+                if (l.Cantidad <= 0) { mensajeError = "La cantidad debe ser > 0."; return; }
+                if (l.PrecioUnitario <= 0) { mensajeError = "El precio debe ser > 0."; return; }
+            }
+
+            var resultado = await ApiClient.RegistrarCompraAsync(nuevaCompra);
+            mensajeExito = $"Compra registrada con ID {resultado.Id}";
+
+            // Reseteamos manteniendo la sincronización de referencia
+            lineas = new List<LineaCompraRequest> { new LineaCompraRequest() };
+            nuevaCompra = new RegistrarCompraComando
+            {
+                Lineas = lineas
+            };
+
+            await Task.Delay(1500);
+            Navigation.NavigateTo("/compras");
+        }
+        catch (ApiException ex)
+        {
+            mensajeError = $"Error del servidor: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            mensajeError = $"Error de conexión: {ex.Message}";
+        }
+        finally
+        {
+            enviando = false;
+        }
+    }
+
+    private void Cancelar() => Navigation.NavigateTo("/compras");
+}

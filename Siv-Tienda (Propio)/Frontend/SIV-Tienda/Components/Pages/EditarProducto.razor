@@ -1,7 +1,6 @@
 @page "/editar-producto/{id:long}"
 @using SIV_Tienda.Services
-@using SIV_Tienda.Components;
-@inject ProductoClient ProductoClient
+@inject ApiClient ApiClient
 @inject NavigationManager Navigation
 
 <h1>Editar Producto</h1>
@@ -76,7 +75,7 @@ else
 
     @* Modal de detalle *@
     <ProductoDetalleModal Visible="@mostrarModal" 
-                          Titulo="Producto Actualizado Exitosamente"
+                          Titulo="✅ Producto Actualizado Exitosamente"
                           Producto="@productoActualizado"
                           OnClose="CerrarModal" />
 }
@@ -98,7 +97,7 @@ else
         try
         {
             cargando = true;
-            producto = await ProductoClient.ObtenerProductoPorIdAsync(Id);
+            producto = await ApiClient.ObtenerProductoPorIdAsync(Id);
 
             if (producto != null)
             {
@@ -145,7 +144,7 @@ else
             if (!ValidarStock())
                 return;
 
-            var resultado = await ProductoClient.ActualizarProductoAsync(Id, productoEdit);
+            var resultado = await ApiClient.ActualizarProductoAsync(Id, productoEdit);
             productoActualizado = resultado;
             mostrarModal = true;
             StateHasChanged();

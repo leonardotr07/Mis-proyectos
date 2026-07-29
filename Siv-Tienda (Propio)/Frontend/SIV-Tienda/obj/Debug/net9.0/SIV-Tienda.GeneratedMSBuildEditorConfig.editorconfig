@@ -28,12 +28,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb25maXJtYXJFbGltaW5hck1vZGFsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/Compras.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wcmFzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/CrearProducto.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhclByb2R1Y3RvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/DetalleCompra.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZXRhbGxlQ29tcHJhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/EditarProducto.razor]
@@ -52,8 +60,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQcm9kdWN0b3NDcml0aWNvcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/Pages/RegistrarCompra.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3RyYXJDb21wcmEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mis-proyectos/Siv-Tienda (Propio)/Frontend/SIV-Tienda/Components/ProductoDetalleModal.razor]

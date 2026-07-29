@@ -1,11 +1,3 @@
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.AssemblyReference.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rpswa.dswa.cache.json
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfoInputs.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfo.cs
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.CoreCompileInputs.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.MvcApplicationPartsAssemblyInfo.cache
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.sourcelink.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\appsettings.Development.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\appsettings.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Tienda.staticwebassets.runtime.json
@@ -16,6 +8,14 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Ti
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Tienda.dll
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\SIV-Tienda.pdb
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.AssemblyReference.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfoInputs.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.AssemblyInfo.cs
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.csproj.CoreCompileInputs.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.MvcApplicationPartsAssemblyInfo.cache
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.sourcelink.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rjimswa.dswa.cache.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
@@ -68,8 +68,6 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compre
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\suhwy63suj-h1s4sie4z3.gz
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\ptcmrdi3qh-63fj8s7r0e.gz
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\8ldakrhs2f-0j3bgjxly4.gz
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\h0akz3o0v2-fulr3dq1m5.gz
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\k2mi04ftci-fulr3dq1m5.gz
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\staticwebassets.build.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\staticwebassets.development.json
@@ -80,3 +78,5 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\refint
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.pdb
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.genruntimeconfig.cache
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\ref\SIV-Tienda.dll
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\h0akz3o0v2-szmi3kp0vu.gz
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\k2mi04ftci-szmi3kp0vu.gz
