@@ -19,6 +19,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -35,6 +36,11 @@ public class EntidadCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    //Si 2 transacciones son ejecutadas a la vez. Lanza OptimisticLockException (Concurrencia)
+    @Version
+    @Column(nullable=false, columnDefinition = "BIGINT DEFAULT 0")
+    private Long version;
 
     // Relación ManyToOne con ProveedorEntity. Lazy loading para evitar traer proveedores innecesariamente.
     @ManyToOne(fetch = FetchType.LAZY)

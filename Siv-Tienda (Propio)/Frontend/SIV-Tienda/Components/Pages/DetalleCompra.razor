@@ -54,23 +54,25 @@ else
             </div>
             @*botones de accion Anular / Pagar dentro del detalle*@
             <div class="mb-3">
-                @if (compra.Estado != CompraEstado.ANULADA
-                    && compra.Estado != CompraEstado.RECIBIDA
-                    && compra.Estado != CompraEstado.COMPLETADA)
+                @if (compra.Estado==CompraEstado.PENDIENTE)
                 {
                     <button type="button" class="btn btn-danger"
                             disabled="@procesando"
                             @onclick="AnularCompra">
                         Anular compra
                     </button>
-                }
-                @if (compra.Estado != CompraEstado.ANULADA
-                    && compra.Estado != CompraEstado.COMPLETADA)
-                {
                     <button type="button" class="btn btn-success"
                             disabled="@procesando"
                             @onclick="PagarCompra">
                         Pagar compra
+                    </button>
+                }
+                @if (compra.Estado == CompraEstado.COMPLETADA )
+                {
+                    <button type="button" class="btn btn-primary"
+                            disabled="@procesando"
+                            @onclick="RecibirCompra">
+                        Recibir Compra
                     </button>
                 }
             </div>
@@ -229,6 +231,37 @@ else
         catch (ApiException ex) when (ex.StatusCode == 409)
         {
             mensaje = "No se puede pagar: " + ex.Response;
+            claseMensaje = "alert-warning";
+        }
+        finally
+        {
+            procesando = false;
+            await CargarCompra();
+        }
+    }
+    private async Task RecibirCompra()
+    {
+        bool confirmado = await JSRuntime.InvokeAsync<bool>("confirm", "¿Confirma que la mercadería fue recibida?");
+        if (!confirmado)
+        {
+            return;
+        }
+
+        procesando = true;
+        try
+        {
+            await ApiClient.RecibirCompraAsync(Id);
+            mensaje = "Compra marcada como recibida correctamente.";
+            claseMensaje = "alert-success";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 404)
+        {
+            mensaje = "No se encontro la compra indicada.";
+            claseMensaje = "alert-danger";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 409)
+        {
+            mensaje = "No se puede marcar como recibida: " + ex.Response;
             claseMensaje = "alert-warning";
         }
         finally

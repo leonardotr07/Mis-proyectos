@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SIV-Tienda")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eed6262e7a6083f660d48bb4c0df215491aa068a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70896985a0fa49c06b1050d986db3f7725bf8ba9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SIV-Tienda")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SIV-Tienda")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

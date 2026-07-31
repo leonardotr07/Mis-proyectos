@@ -9,8 +9,8 @@ import com.tienda.app.puerto.entrada.compras.ObtenerCompraPorIdUseCase;
 import com.tienda.app.puerto.entrada.compras.ListarComprasUseCase;
 import com.tienda.app.puerto.entrada.compras.AnularCompraUseCase;
 import com.tienda.app.puerto.entrada.compras.PagarCompraUseCase;
+import com.tienda.app.puerto.entrada.compras.RecibirCompraUseCase;
 import com.tienda.app.servicio.compra.ServicioRegistrarCompra;
-import com.tienda.dominio.excepcion.CompraNoEncontradaException;
 import com.tienda.dominio.modelo.purchase.Compra;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+
 
 /**
  *
@@ -45,17 +45,20 @@ public class CompraController {
     private final ObtenerCompraPorIdUseCase obtenerCompraPorIdUseCase;
     private final AnularCompraUseCase anularCompraUseCase;
     private final PagarCompraUseCase pagarCompraUseCase;
+    private final RecibirCompraUseCase recibirCompraUseCase;
 
     // Inyección por constructor
 
     public CompraController(ServicioRegistrarCompra servicioRegistrarCompra,
             ListarComprasUseCase listarComprasUseCase, ObtenerCompraPorIdUseCase obtenerCompraPorIdUseCase,
-            AnularCompraUseCase anularCompraUseCase, PagarCompraUseCase pagarCompraUseCase) {
+            AnularCompraUseCase anularCompraUseCase, PagarCompraUseCase pagarCompraUseCase,
+            RecibirCompraUseCase recibirCompraUseCase) {
         this.servicioRegistrarCompra = servicioRegistrarCompra;
         this.listarComprasUseCase = listarComprasUseCase;
         this.obtenerCompraPorIdUseCase = obtenerCompraPorIdUseCase;
         this.anularCompraUseCase = anularCompraUseCase;
         this.pagarCompraUseCase = pagarCompraUseCase;
+        this.recibirCompraUseCase = recibirCompraUseCase;
     }
     
 
@@ -97,6 +100,7 @@ public class CompraController {
         return ResponseEntity.ok(compraAnulada);
     }
     
+    //pagarCompra
     @PutMapping("/{id}/pagar")
     @Operation(operationId = "pagarCompra", summary = "Registra el pago total de una compra al proveedor")
     @ApiResponse(responseCode = "200", description = "Compra pagada correctamente")
@@ -107,20 +111,13 @@ public class CompraController {
         return ResponseEntity.ok(compraPagada);
     }
     
-    // Traducen los errores de dominio/aplicacion en respuestas HTTP correctas
-
-    // Se lanza cuando el id de la compra no existe en el repositorio
-    @ExceptionHandler(CompraNoEncontradaException.class)
-    public ResponseEntity<String> manejarCompraNoEncontrada(CompraNoEncontradaException ex) {
-        log.warn("Compra no encontrada: {}", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
-
-    // Se lanza desde el dominio (Compra.anular() / marcarComoCompletada())
-    // cuando se intenta un cambio de estado invalido, ej. anular una compra ya completada
-    @ExceptionHandler(IllegalStateException.class)
-    public ResponseEntity<String> manejarEstadoInvalido(IllegalStateException ex) {
-        log.warn("Transicion de estado invalida: {}", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+    //Recibir Compra
+    @PutMapping("/{id}/recibir")
+    @Operation(operationId = "recibirCompra", summary = "Marca una compra pagada como recibida (mercaderia entregada)")
+    @ApiResponse(responseCode = "200", description = "Compra marcada como recibida correctamente")
+    public ResponseEntity<Compra> recibirCompra(@PathVariable Long id) {
+        log.info("Petición para recibir compra recibida. Compra ID: {}", id);
+        Compra compraRecibida = recibirCompraUseCase.ejecutar(id);
+        return ResponseEntity.ok(compraRecibida);
     }
 }

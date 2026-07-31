@@ -1,4 +1,5 @@
 com\tienda\app\servicio\producto\ServicioEliminarProducto.class
+com\tienda\app\servicio\compra\ServicioRecibirCompra.class
 com\tienda\app\puerto\salida\RepositorioProveedor.class
 com\tienda\app\comando\producto\ActualizarProductoComando.class
 com\tienda\app\comando\compras\RegistrarCompraComando.class
@@ -15,6 +16,7 @@ com\tienda\app\puerto\entrada\productos\ListarProductosUseCase.class
 com\tienda\app\servicio\producto\ServicioActualizarProductos.class
 com\tienda\app\servicio\producto\ServicioObtenerProductoPorId.class
 com\tienda\app\puerto\entrada\productos\ObtenerProductoIdUseCase.class
+com\tienda\app\puerto\entrada\compras\RecibirCompraUseCase.class
 com\tienda\app\servicio\compra\ServicioAnularCompra.class
 com\tienda\app\puerto\entrada\proveedor\ListarProveedoresUseCase.class
 com\tienda\app\puerto\entrada\productos\ActualizarProductoUseCase.class

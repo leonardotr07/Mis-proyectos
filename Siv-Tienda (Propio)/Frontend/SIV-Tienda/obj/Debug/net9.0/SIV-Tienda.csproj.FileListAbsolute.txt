@@ -68,6 +68,8 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compre
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\suhwy63suj-h1s4sie4z3.gz
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\ptcmrdi3qh-63fj8s7r0e.gz
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\8ldakrhs2f-0j3bgjxly4.gz
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\h0akz3o0v2-id80xrkf2j.gz
+D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\k2mi04ftci-id80xrkf2j.gz
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\staticwebassets.build.json
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\staticwebassets.development.json
@@ -78,5 +80,3 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\refint
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.pdb
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\SIV-Tienda.genruntimeconfig.cache
 D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\ref\SIV-Tienda.dll
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\h0akz3o0v2-szmi3kp0vu.gz
-D:\Mis-proyectos\Siv-Tienda (Propio)\Frontend\SIV-Tienda\obj\Debug\net9.0\compressed\k2mi04ftci-szmi3kp0vu.gz

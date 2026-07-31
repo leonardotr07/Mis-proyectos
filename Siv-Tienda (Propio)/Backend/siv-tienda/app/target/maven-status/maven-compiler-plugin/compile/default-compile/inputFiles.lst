@@ -6,6 +6,7 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\ti
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\compras\ListarComprasUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\compras\ObtenerCompraPorIdUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\compras\PagarCompraUseCase.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\compras\RecibirCompraUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\productos\ActualizarProductoUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\productos\EliminarProductoUseCase.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\puerto\entrada\productos\ListarProductosUseCase.java
@@ -20,6 +21,7 @@ D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\ti
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\compra\ServicioListarCompras.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\compra\ServicioObtenerCompraPorId.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\compra\ServicioPagarCompra.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\compra\ServicioRecibirCompra.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\compra\ServicioRegistrarCompra.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\producto\ServicioActualizarProductos.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\app\src\main\java\com\tienda\app\servicio\producto\ServicioEliminarProducto.java
