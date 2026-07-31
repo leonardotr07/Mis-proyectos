@@ -34,6 +34,6 @@ public class ServicioAnularCompra implements AnularCompraUseCase{
         compra.anular();
 
         // Se persiste el nuevo estado de la compra y se retorna el objeto actualizado
-        return repositorioCompra.guardar(compra);
+        return repositorioCompra.actualizarEstado(compra);
     }
 }

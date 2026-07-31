@@ -1,6 +1,7 @@
 com\tienda\dominio\modelo\mercaderia\CategoriaProducto.class
 com\tienda\dominio\valor\Dinero.class
 com\tienda\dominio\valor\CantidadStock.class
+com\tienda\dominio\excepcion\TransicionEstadoInvalidaException.class
 com\tienda\dominio\excepcion\StockInsuficienteException.class
 com\tienda\dominio\valor\EstadoCompra.class
 com\tienda\dominio\excepcion\CompraNoEncontradaException.class

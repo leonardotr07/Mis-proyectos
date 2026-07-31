@@ -15,6 +15,15 @@
     </div>
 }
 
+@* Mensaje de error o éxito *@
+@if (!string.IsNullOrEmpty(mensaje))
+{
+    <div class="alert @claseMensaje alert-dismissible fade show" role="alert">
+        @mensaje
+        <button type="button" class="btn-close" @onclick="() => mensaje = null"></button>
+    </div>
+}
+
 @*Botón con referencia a crear un nuevo producto*@
 <a href="/crear-producto" class="btn btn-success mb-3">+ Nuevo Producto</a>
 
@@ -68,10 +77,11 @@ else
 
 @code {
     private ICollection<Producto>? productos;
-    private bool mostrarModalEliminar=false;
-
+    private bool mostrarModalEliminar = false;
     private Producto? productoAEliminar;
-     private ICollection<Producto>? productosCriticos;
+    private ICollection<Producto>? productosCriticos;
+    private string? mensaje;
+    private string claseMensaje = "alert-info";
 
     protected override async Task OnInitializedAsync()
     {
@@ -86,7 +96,6 @@ else
 
     private void PedirConfirmacion(Producto datProducto)
     {
-        var nombre = productos?.FirstOrDefault(p => p.Id == datProducto.Id)?.Nombre ?? "producto";
         productoAEliminar = datProducto;
         mostrarModalEliminar = true;
         StateHasChanged();
@@ -100,21 +109,49 @@ else
 
     private async Task ConfirmarEliminar()
     {
-        if (productoAEliminar!=null)
+        if (productoAEliminar != null)
         {
             try
             {
                 await ApiClient.EliminarProductoAsync(productoAEliminar.Id);
-                productos = await ApiClient.ListarProductosAsync();
+                mensaje = "Producto eliminado correctamente.";
+                claseMensaje = "alert-success";
+                await CargarDatos();
+                StateHasChanged();
+            }
+            catch (ApiException ex) when (ex.StatusCode == 409)
+            {
+                string mensajeBackend="";
+                try
+                {
+                    var errorResponse = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(ex.Response);
+                    mensajeBackend = errorResponse?.GetValueOrDefault("error") ?? "No se puede eliminar el producto porque tiene dependencias.";
+                }
+                catch
+                {
+                    mensajeBackend = "No se puede eliminar el producto porque tiene dependencias asociadas.";
+                }
+                mensaje = $"No se puede eliminar el producto ID {productoAEliminar?.Id}: {mensajeBackend}";
+                claseMensaje = "alert-danger";
+                StateHasChanged();
+            }
+            catch (ApiException ex) when (ex.StatusCode == 404)
+            {
+                mensaje = "El producto ya no existe.";
+                claseMensaje = "alert-danger";
                 StateHasChanged();
             }
             catch (Exception ex)
             {
-                // Manejo de errores
-                Console.WriteLine($"Error al eliminar: {ex.Message}");
+                mensaje = $"Error inesperado: {ex.Message}";
+                claseMensaje = "alert-danger";
+                StateHasChanged();
+            }
+            finally
+            {
+                mostrarModalEliminar = false;
+                productoAEliminar = null;
             }
         }
-        mostrarModalEliminar = false;
-        productoAEliminar = null;
     }
 }

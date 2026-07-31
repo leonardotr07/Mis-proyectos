@@ -5,6 +5,7 @@
 package com.tienda.app.puerto.salida;
 
 import com.tienda.dominio.modelo.purchase.Compra;
+import com.tienda.dominio.valor.EstadoCompra;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,4 +19,6 @@ public interface RepositorioCompra {
     Optional<Compra> buscarPorId(Long id);
     
     List<Compra> listarTodos();
+    
+    Compra actualizarEstado(Compra compra);
 }

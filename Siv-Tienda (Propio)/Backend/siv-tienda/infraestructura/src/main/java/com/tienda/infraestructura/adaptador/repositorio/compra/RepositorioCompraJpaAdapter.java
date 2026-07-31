@@ -5,8 +5,11 @@
 package com.tienda.infraestructura.adaptador.repositorio.compra;
 
 import com.tienda.app.puerto.salida.RepositorioCompra;
+import com.tienda.dominio.excepcion.CompraNoEncontradaException;
 import com.tienda.dominio.modelo.purchase.Compra;
+import com.tienda.dominio.valor.EstadoCompra;
 import com.tienda.infraestructura.entidad.compras.EntidadCompra;
+import com.tienda.infraestructura.entidad.compras.EntidadEstadoCompra;
 import com.tienda.infraestructura.mapper.CompraMapper;
 import java.util.List;
 import java.util.Optional;
@@ -53,5 +56,21 @@ public class RepositorioCompraJpaAdapter implements RepositorioCompra{
         return jpaRepository.findAll().stream()
                 .map(mapper::toDomain)
                 .collect(Collectors.toList());
+    }
+    
+    @Override
+    public Compra actualizarEstado(Compra compra) {
+        EntidadCompra entity = jpaRepository.findById(compra.getId())
+                .orElseThrow(() -> new CompraNoEncontradaException(compra.getId()));
+        
+        EntidadEstadoCompra estadoJpa = convertirEstado(compra.getEstado());
+        entity.setEstado(estadoJpa);
+
+        EntidadCompra saved = jpaRepository.save(entity);
+        return mapper.toDomain(saved);
+    }
+    
+    private EntidadEstadoCompra convertirEstado(EstadoCompra estado) {
+        return mapper.estadoToEntity(estado);
     }
 }

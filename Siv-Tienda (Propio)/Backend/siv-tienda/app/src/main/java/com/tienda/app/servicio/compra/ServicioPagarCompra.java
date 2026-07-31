@@ -35,16 +35,18 @@ public class ServicioPagarCompra implements PagarCompraUseCase{
     @Transactional
     public Compra ejecutar(Long id) {
         // Se busca la compra por id, si no existe se lanza excepcion controlada
-        Compra compra = repositorioCompra.buscarPorId(id)
+        Compra compra=repositorioCompra.buscarPorId(id)
                 .orElseThrow(() -> new CompraNoEncontradaException(id));
 
         // Se delega al dominio: marca la compra como COMPLETADA (pagada)
         // El propio metodo lanza IllegalStateException si la compra esta ANULADA
         compra.marcarComoCompletada();
 
+        Compra compraPagada=repositorioCompra.actualizarEstado(compra);
+        
         //La compra esta pagada
         //Se recorre por cada linea para aumentar el stock de producto.
-        for(LineaCompra linea : compra.getLineas()){
+        for(LineaCompra linea : compraPagada.getLineas()){
             
             Long productoId=linea.getDatProducto().getId();
             Producto datProducto=repositorioProducto.buscarPorId(productoId)
@@ -56,7 +58,6 @@ public class ServicioPagarCompra implements PagarCompraUseCase{
         }
         
         // Se persiste el nuevo estado y se retorna la compra actualizada
-        return repositorioCompra.guardar(compra);
+        return compraPagada;
     }
-    
 }

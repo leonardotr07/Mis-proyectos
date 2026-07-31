@@ -4,7 +4,6 @@
 @inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
 
-
 <h1> Historial de Compras </h1>
 
 <a href="/registrar-compra" class="btn btn-success mb-3">+ Nueva Compra</a>
@@ -52,30 +51,33 @@ else
                         </span>
                     </td>
                     <td>
-                        <a href="/compras/@c.Id" class="btn btn-sm btn-info" style="color: #ffffff;">Ver</a>
-                        @* >>> boton Anular, solo visible si el estado lo permite
-                             (misma regla que valida el dominio: no se anula RECIBIDA ni COMPLETADA) *@
-                        @if (c.Estado != CompraEstado.ANULADA
-                            && c.Estado != CompraEstado.RECIBIDA
-                            && c.Estado != CompraEstado.COMPLETADA)
-                        {
-                            <button type="button" class="btn btn-sm btn-danger"
-                                    disabled="@procesando"
-                                    @onclick="() => AnularCompra(c.Id)">
-                                Anular
-                            </button>
-                        }
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="/compras/@c.Id" class="btn btn-sm btn-info text-white">Ver</a>
 
-                        @* Boton Pagar, solo visible si la compra no esta anulada ni ya pagada *@
-                        @if (c.Estado != CompraEstado.ANULADA
-                            && c.Estado != CompraEstado.COMPLETADA)
-                        {
-                            <button type="button" class="btn btn-sm btn-success"
-                                    disabled="@procesando"
-                                    @onclick="() => PagarCompra(c.Id)">
-                                Pagar
-                            </button>
-                        }
+                            @if (c.Estado == CompraEstado.PENDIENTE)
+                            {
+                                <button type="button" class="btn btn-sm btn-danger"
+                                        disabled="@procesando"
+                                        @onclick="() => AnularCompra(c.Id)">
+                                    Anular
+                                </button>
+
+                                <button type="button" class="btn btn-sm btn-success"
+                                        disabled="@procesando"
+                                        @onclick="() => PagarCompra(c.Id)">
+                                    Pagar
+                                </button>
+                            }
+
+                            @if (c.Estado == CompraEstado.COMPLETADA)
+                            {
+                                <button type="button" class="btn btn-sm btn-primary"
+                                        disabled="@procesando"
+                                        @onclick="() => RecibirCompra(c.Id)">
+                                    Recibido
+                                </button>
+                            }
+                        </div>
                     </td>
                 </tr>
             }
@@ -100,37 +102,32 @@ else
     }
     private async Task AnularCompra(long id)
     {
-        // Se pide confirmacion al usuario mediante el dialogo nativo del navegador
         bool confirmado = await JSRuntime.InvokeAsync<bool>("confirm", "¿Confirma anular esta compra?");
         if (!confirmado)
         {
             return;
         }
 
-        procesando = true; // Bloquea los botones mientras se procesa la peticion
+        procesando = true;
         try
         {
-            // Llama al endpoint PUT /api/compras/{id}/anular
             await ApiClient.AnularCompraAsync(id);
             mensaje = "Compra anulada correctamente.";
             claseMensaje = "alert-success";
         }
         catch (ApiException ex) when (ex.StatusCode == 404)
         {
-            // La compra no existe (fue eliminada o el id es invalido)
             mensaje = "No se encontro la compra indicada.";
             claseMensaje = "alert-danger";
         }
         catch (ApiException ex) when (ex.StatusCode == 409)
         {
-            // La compra ya esta en un estado que no permite anulacion
             mensaje = "No se puede anular: " + ex.Response;
             claseMensaje = "alert-warning";
         }
         finally
         {
             procesando = false;
-            // Se vuelve a cargar la lista para reflejar el nuevo estado
             await CargarCompras();
         }
     }
@@ -146,7 +143,6 @@ else
         procesando = true;
         try
         {
-            // Llama al endpoint PUT /api/compras/{id}/pagar
             await ApiClient.PagarCompraAsync(id);
             mensaje = "Compra pagada correctamente.";
             claseMensaje = "alert-success";
@@ -158,7 +154,6 @@ else
         }
         catch (ApiException ex) when (ex.StatusCode == 409)
         {
-            // La compra esta anulada y no puede marcarse como pagada
             mensaje = "No se puede pagar: " + ex.Response;
             claseMensaje = "alert-warning";
         }
@@ -170,9 +165,6 @@ else
     }
     private string ObtenerClaseEstado(CompraEstado estado)
     {
-        @*Esto es muy dificil que vaya a cambiar.
-         Por ende es por eso que se
-        coloca de manera "hardcodeada"*@
         return estado switch
         {
             CompraEstado.PENDIENTE => "bg-warning text-dark",
@@ -181,5 +173,36 @@ else
             CompraEstado.ANULADA => "bg-danger",
             _ => "bg-secondary"
         };
+    }
+    private async Task RecibirCompra(long id)
+    {
+        bool confirmado = await JSRuntime.InvokeAsync<bool>("confirm", "¿Confirma que la mercadería fue recibida?");
+        if (!confirmado)
+        {
+            return;
+        }
+
+        procesando = true;
+        try
+        {
+            await ApiClient.RecibirCompraAsync(id);
+            mensaje = "Compra marcada como recibida correctamente.";
+            claseMensaje = "alert-success";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 404)
+        {
+            mensaje = "No se encontro la compra indicada.";
+            claseMensaje = "alert-danger";
+        }
+        catch (ApiException ex) when (ex.StatusCode == 409)
+        {
+            mensaje = "No se puede marcar como recibida: " + ex.Response;
+            claseMensaje = "alert-warning";
+        }
+        finally
+        {
+            procesando = false;
+            await CargarCompras();
+        }
     }
 }

@@ -1,5 +1,6 @@
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\excepcion\CompraNoEncontradaException.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\excepcion\StockInsuficienteException.java
+D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\excepcion\TransicionEstadoInvalidaException.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\modelo\mercaderia\CategoriaProducto.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\modelo\mercaderia\Producto.java
 D:\Mis-proyectos\Siv-Tienda (Propio)\Backend\siv-tienda\dominio\src\main\java\com\tienda\dominio\modelo\provider\Proveedor.java
