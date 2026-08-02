@@ -4,7 +4,7 @@
 
 ## Sobre Mí
 
-Soy un apasionado de la ingeniería informática con un enfoque que abarca **desde la memoria y los punteros en C/C++ hasta la arquitectura empresarial con Java y el análisis de datos con Power BI**. 
+Hola, mi nombre es Leonardo Tueros. Soy un apasionado de la ingeniería informática con un enfoque que abarca **desde la memoria y los punteros en C/C++ hasta la arquitectura empresarial con Java y el análisis de datos con Power BI**. 
 
 Mi formación en pregrado me ha dado una base sólida en ciencias de la computación, pero mi interés es la **curiosidad por construir sistemas robustos, eficientes y que resuelvan problemas del mundo real**.
 
