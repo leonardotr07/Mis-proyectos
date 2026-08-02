@@ -6,9 +6,9 @@
 
 Soy un apasionado de la ingeniería informática con un enfoque que abarca **desde la memoria y los punteros en C/C++ hasta la arquitectura empresarial con Java y el análisis de datos con Power BI**. 
 
-Mi formación en pregrado me ha dado una base sólida en ciencias de la computación, pero mi verdadero motor es la **curiosidad por construir sistemas robustos, eficientes y que resuelvan problemas del mundo real**.
+Mi formación en pregrado me ha dado una base sólida en ciencias de la computación, pero mi interés es la **curiosidad por construir sistemas robustos, eficientes y que resuelvan problemas del mundo real**.
 
-Este repositorio centraliza mis tres líneas de trabajo principales, demostrando mi versatilidad como ingeniero:
+Este repositorio centraliza tres líneas de trabajo principales:
 
 1.  **Fundamentos de Sistemas** (Algoritmos y Estructuras de Datos en C/C++).
 2.  **Desarrollo Empresarial** (Sistema transaccional con Java + Dashboard BI).
@@ -20,8 +20,6 @@ Este repositorio centraliza mis tres líneas de trabajo principales, demostrando
 
 ### Programas Independientes (C / C++) - *Fundamentos Sólidos*
 
-> **Carpeta:** [`/Programas-Independientes`](./Programas_independientes)
-
 Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles que he aprendido durante mi pregrado de mi carrera. Aquí subo mis implementaciones puras de **Ciencias de la Computación** para demostrar que entiendo cómo funciona realmente una máquina, más allá de los frameworks modernos.
 
 **¿Qué encontrarás aquí?**
@@ -32,8 +30,6 @@ Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles q
 ---
 
 ### Proyecto Propio: SIV-Tienda (Java + C# + Power BI) - *Visión Empresarial*
-
-> **Carpeta:** [`/siv-tienda (propio)`](./siv-tienda_(propio))
 
 **SIV-Tienda** es mi proyecto propio de desarrollo de software. Es un sistema integral de gestión de inventario, compras a proveedores y sobre ventas para el rubro textil, construido con una **arquitectura moderna y políglota**.
 
@@ -47,8 +43,6 @@ Esta sección trata sobre algoritmos, estructuras de datos y elementos útiles q
 ---
 
 ### Proyecto Grupal: WearDrop - *Trabajo en Equipo y Metodologías Ágiles*
-
-> **Carpeta:** [`/WearDrop`](./wear-drop)
 
 **WearDrop** es un sistema web transaccional desarrollado en colaboración con un equipo de compañeros de la universidad como parte del curso de **Programación 3**. En este proyecto se debió trabajar sobre un entorno colaborativo, manejar Git y aplicar metodologías ágiles en un contexto académico con entregables progresivos.
 
