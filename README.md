@@ -66,11 +66,13 @@ El proyecto aborda la problemática real de la falta de digitalización en este 
 **Mis contribuciones en este proyecto:**
 1. **Implementación de requisitos**
 Realice al completo los siguientes requisitos:
+
 RF6: El sistema deberá registrar, modificar y mostrar un almacén que utiliza la tienda para guardar sus productos.
 
 RF9: El sistema debe registrar un historial completo de todos los movimientos de inventario (entradas, salidas, devoluciones) con fecha, hora y el usuario responsable por Almacén. Permite revertir un cambio incorrecto si es necesario.
 
 Y realice la sección de sobre Lote de Inventario sobre este requisito:
+
 RF7:  El software deberá permitir asignar un número de lote de inventario en grupo recibido de un proveedor, para facilitar la búsqueda y organización del inventario. (Un "lote" es un conjunto de productos que llegan juntos en una misma compra. El sistema debe permitir que, al registrar la entrada de mercadería, se genere o asigne un identificador único (número de lote) a ese grupo.)
 
 2. **BackEnd y FrontEnd completa sobre el package Almacen**
