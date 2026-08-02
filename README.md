@@ -1,8 +1,8 @@
-<h1 align="center">Mi Portafolio de Ingeniería Informática</h1> <h3 align="center">Sobre algoritmos de bajo nivel al Business Intelligence y el trabajo colaborativo</h3>
+<h1 align="center">Mi Portafolio de Ingeniería Informática</h1>
 
 ---
 
-## 🧑‍💻 Sobre Mí
+## Sobre Mí
 
 Soy un apasionado de la ingeniería informática con un enfoque que abarca **desde la memoria y los punteros en C/C++ hasta la arquitectura empresarial con Java y el análisis de datos con Power BI**. 
 
@@ -102,7 +102,7 @@ Una vez con el software realizado. Me encargue del despliegue de la aplicación 
 
 ##  ¿Qué estoy buscando?
 
-Estoy en la búsqueda activa de mi **primera experiencia profesional** en el área de desarrollo de software. Me interesan particularmente los roles donde pueda aportar mi visión tanto a nivel de **arquitectura de sistemas** como en la **optimización de rendimiento**, sin dejar de lado el análisis de datos para la toma de decisiones.
+Estoy en la búsqueda de una experiencia profesional en el área de desarrollo de software. Me interesan particularmente los roles donde pueda aportar tanto a nivel de **arquitectura de sistemas** (Backend o Frontend) como en la **optimización de rendimiento**, sin dejar de lado el análisis de datos para la toma de decisiones.
 
 **Contáctame:**
 - **LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/leonardo-julio-tueros-rodriguez-a845b7342/).
