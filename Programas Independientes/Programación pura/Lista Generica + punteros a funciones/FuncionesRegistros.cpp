@@ -29,8 +29,27 @@ void* leeregistro(ifstream &archLectura){
     return registro;
 }
 char*leerCadenaExacta(ifstream &archLectura, char carFinal){
-    char*ptr, cadena[8];
-    archLectura.getline(cadena, 8, carFinal);
+    char*ptr, cadena[9];
+    archLectura.getline(cadena, 9, carFinal);
+	
+	// Si el archivo tiene CRLF, elimina el '\r' final
+	/*Al hacer cat -A Pedidos31.csv | head -7
+		Salio como resultado:
+		2,14268463,BHD6079^M$
+		7,42302422,RWW7975^M$
+		9,11750801,VDL9379^M$
+		11,14268463,XBC5847^M$
+		15,60740809,CTW5846^M$
+		16,58717040,BZY0235^M$
+		26,14268463,VMW6915^M$
+		
+		Por ende hay que cuidar ese detalle.
+	*/
+    int len = strlen(cadena);
+    if(len > 0 && cadena[len-1] == '\r'){
+        cadena[len-1] = '\0';
+    }
+	
     ptr=new char[strlen(cadena)+1];
     strcpy(ptr, cadena);
     return ptr;
