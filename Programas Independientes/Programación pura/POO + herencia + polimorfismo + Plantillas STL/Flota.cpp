@@ -81,18 +81,16 @@ void Flota::cargar_pedidos(const char* nombArchCsv) {
         exit(1);
     }
     string placa;
-//    class Vehiculo*datVehiculo;
+    class Vehiculo*datVehiculo;
     while(true){
         getline(archLectura, placa, ',');
         if(archLectura.eof()) break;
-//        datVehiculo=buscarVehiculo(placa);
+        datVehiculo=buscarVehiculo(placa);
         
-        vehiculos[placa]->insertar(archLectura);
-        //Aqui es el problema
-//        if(datVehiculo!=nullptr){
-//            datVehiculo->insertar(archLectura);
-//            cout<<datVehiculo->GetPlaca()<<endl;
-//        }else while(archLectura.get()!='\n');
+        if(datVehiculo!=nullptr){
+            datVehiculo->insertar(archLectura);
+            cout<<datVehiculo->GetPlaca()<<endl;
+        }else while(archLectura.get()!='\n');
         
     }
 }
