@@ -11,7 +11,7 @@ Mi aporte respecto a este proyecto académico fue todo lo relacionado con el pac
 
 ## Descripción del Proyecto
 
-**WearDrop** es un sistema web transaccional desarrollado en colaboración con un equipo de compañeros de la universidad. El proyecto aborda la problemática real de la falta de digitalización en las tiendas de ropa del **Emporio Comercial de Gamarra (Lima)**, un entorno de negocio caracterizado por su alta rotación de productos, ventas por mayor y menor, y una constante renovación de inventario.
+**WearDrop** es un sistema web transaccional desarrollado en colaboración con un equipo de compañeros de la universidad. El proyecto aborda la problemática de la falta de digitalización en las tiendas de ropa del **Emporio Comercial de Gamarra (Lima)**, un entorno de negocio caracterizado por su alta rotación de productos, ventas por mayor y menor, y una constante renovación de inventario.
 
 **El sistema automatiza procesos clave** que tradicionalmente se realizaban de forma manual o empírica:
 - Registro de Ventas con emisión de comprobantes electrónicos.
