@@ -101,5 +101,5 @@ Una vez con el software realizado. Me encargue del despliegue de la aplicación 
 Estoy en la búsqueda de una experiencia profesional en el área de desarrollo de software. Me interesan particularmente los roles donde pueda aportar tanto a nivel de **arquitectura de sistemas** (Backend o Frontend) como en la **optimización de rendimiento**, sin dejar de lado el análisis de datos para la toma de decisiones.
 
 **Contáctame:**
-- **LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/leonardo-julio-tueros-rodriguez-a845b7342/).
+- **LinkedIn:** [linkedin.com/in/leonardo-tueros](https://www.linkedin.com/in/leonardo-julio-tueros-rodriguez-a845b7342/).
 - **Correo:** leonardotr07@gmail.com
