@@ -5,7 +5,7 @@
 ---
 ## Colaboradores
 
-Proyecto desarrollado por un equipo de 6 estudiantes de la PUCP como parte del curso de Programación 3. Cada miembro contribuyó en diferentes módulos del sistema como por ejemplo: descuentos, promociones, ventas, productos, etc. Siguiendo metodologías ágiles y buenas prácticas de trabajo colaborativo.
+Proyecto desarrollado por un equipo de 6 estudiantes (incluyendome) de la PUCP como parte del curso de Programación 3. Cada miembro contribuyó en diferentes módulos del sistema como por ejemplo: descuentos, promociones, ventas, productos, etc. Siguiendo metodologías ágiles y buenas prácticas de trabajo colaborativo.
 
 Mi aporte respecto a este proyecto académico fue todo lo relacionado con el package Almacen en donde se trabajan con las clases Almacen, MovimientoAlmacen, Lotes, MovimientoAlmacenXLote y AlmacenXMovimientoAlmacen (tanto Front como Back). Además fui el encargado de desplegar la aplicación mediante un servidor en AWS en donde se configuro todo lo necesario.
 
@@ -29,7 +29,7 @@ Mi aporte respecto a este proyecto académico fue todo lo relacionado con el pac
 | **Backend (Lógica de negocio)** | Java (JAX-WS) | Java 8+ |
 | **Frontend (Interfaz web)** | C# (.NET Framework / ASP.NET) | .NET 4.5+ |
 | **Base de Datos** | MySQL | 5.7+ |
-| **Comunicación** | Servicios Web SOAP |
+| **Comunicación** | Servicios Web SOAP | - |
 | **Arquitectura** | Cliente–Servidor / Monolítica por capas | - |
 
 ---
