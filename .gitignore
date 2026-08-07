@@ -1,0 +1,85 @@
+# ============================================
+# Archivos de configuración sensibles
+# ============================================
+**/application.properties
+**/db.properties
+**/token.properties
+
+# ============================================
+# Java / Spring Boot
+# ============================================
+# Archivos compilados
+*.class
+*.jar
+*.war
+*.ear
+
+# Directorios de salida de compilación
+target/
+build/
+out/
+
+# Logs
+*.log
+logs/
+
+# Archivos de configuración de IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.vscode/
+
+# ============================================
+# .NET / Blazor
+# ============================================
+# Directorios de salida
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Archivos de usuario de VS
+*.user
+*.suo
+*.userosscache
+*.vs/
+*.vssscc
+*.sln.docstates
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+
+# ============================================
+# Sistema operativo
+# ============================================
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# ============================================
+# Otros
+# ============================================
+# Archivos de dependencias (si usas Maven/Gradle)
+.mvn/
+mvnw
+mvnw.cmd
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.h2.db
+*.mv.db
